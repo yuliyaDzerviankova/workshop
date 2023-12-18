@@ -12,9 +12,11 @@ import {
   PhoneIcon,
   Rectangle,
 } from "../../assets"
+import { Footer, Header } from "components"
 
 const Home = () => (
   <Stack alignItems="flex-start" flex={1} width="100%">
+    <Header />
     <Flex align="center" justify="space-between" px="100px" py="34px" width="100%">
       <Text color="#A77E50" fontSize="18px">
         Досталяем прекрасное по Гомелю и Беларуси!
@@ -237,6 +239,8 @@ const Home = () => (
       <Text>сотрудничает</Text>
       <Text>магазин</Text>
     </Stack>
+
+    <Footer />
   </Stack>
 )
 
