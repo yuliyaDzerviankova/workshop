@@ -2,4 +2,6 @@ export * from "./auth/RegisterPage"
 
 export * from "./auth/SignInPage"
 
-export * from "./catalog/Catalog"
+export * from "./home/Home"
+
+export * from "./cart/Cart"
