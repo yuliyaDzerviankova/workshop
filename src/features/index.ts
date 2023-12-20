@@ -9,3 +9,5 @@ export * from "./cart/Cart"
 export * from "./order/Order"
 
 export * from "./profile/Profile"
+
+export * from "./profile/components"

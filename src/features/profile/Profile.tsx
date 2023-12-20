@@ -4,6 +4,7 @@ import { Grid, HStack, Heading, Link, Tab, TabList, TabPanel, TabPanels, Tabs, T
 import { CommentIcon, DeliveryAddressesIcon, ExitIcon, ListOrdersIcon, PaymentIcon } from "../../assets"
 import { Footer, Header } from "../../components"
 import { Card } from "../../components/card/Card"
+import { PersonalInfo } from "./components";
 
 const Profile = () => {
   const cardItems = [
@@ -49,13 +50,67 @@ const Profile = () => {
         <HStack>
           <HStack>
             <Tabs display="flex">
-              <TabList display="flex" flexDirection="column">
-                <Tab>Панель управления</Tab>
-                <Tab>Персональные данные</Tab>
-                <Tab>Доставка и оплата</Tab>
-                <Tab>История заказов</Tab>
-                <Tab>Отзывы</Tab>
-                <Tab>Удаление аккаунта</Tab>
+              <TabList display="flex" flexDirection="column" width="30%">
+                <Tab
+                  _selected={{ background: "rgba(198, 197, 197, 0.50)" }}
+                  borderBottomColor="#828282"
+                  borderBottomWidth={1}
+                  px="40px"
+                  py="20px"
+                  whiteSpace="nowrap"
+                >
+                  Панель управления
+                </Tab>
+                <Tab
+                  _selected={{ background: "rgba(198, 197, 197, 0.50)" }}
+                  borderBottomColor="#828282"
+                  borderBottomWidth={1}
+                  px="40px"
+                  py="20px"
+                  whiteSpace="nowrap"
+                >
+                  Персональные данные
+                </Tab>
+                <Tab
+                  _selected={{ background: "rgba(198, 197, 197, 0.50)" }}
+                  borderBottomColor="#828282"
+                  borderBottomWidth={1}
+                  px="40px"
+                  py="20px"
+                  whiteSpace="nowrap"
+                >
+                  Доставка и оплата
+                </Tab>
+                <Tab
+                  _selected={{ background: "rgba(198, 197, 197, 0.50)" }}
+                  borderBottomColor="#828282"
+                  borderBottomWidth={1}
+                  px="40px"
+                  py="20px"
+                  whiteSpace="nowrap"
+                >
+                  История заказов
+                </Tab>
+                <Tab
+                  _selected={{ background: "rgba(198, 197, 197, 0.50)" }}
+                  borderBottomColor="#828282"
+                  borderBottomWidth={1}
+                  px="40px"
+                  py="20px"
+                  whiteSpace="nowrap"
+                >
+                  Отзывы
+                </Tab>
+                <Tab
+                  _selected={{ background: "rgba(198, 197, 197, 0.50)" }}
+                  borderBottomColor="#828282"
+                  borderBottomWidth={1}
+                  px="40px"
+                  py="20px"
+                  whiteSpace="nowrap"
+                >
+                  Удаление аккаунта
+                </Tab>
               </TabList>
               <TabPanels flex={1} ml="20px">
                 <TabPanel display="flex" flexWrap="wrap">
@@ -64,6 +119,9 @@ const Profile = () => {
                       <Card key={title} icon={icon} title={title} />
                     ))}
                   </Grid>
+                </TabPanel>
+                <TabPanel>
+                  <PersonalInfo />
                 </TabPanel>
               </TabPanels>
             </Tabs>

@@ -11,7 +11,7 @@ const Card = ({ icon, title }: Props) => (
     _hover={{ background: "link", color: "accent", cursor: "pointer" }}
     _notFirst={{ mb: 4 }}
     alignItems="center"
-    boxShadow="4px 4px 5px 0px rgba(0, 0, 0, 0.25)"
+    boxShadow="4px 4px 5px 0 rgba(0, 0, 0, 0.25)"
     display="flex"
     flexDirection="column"
     h="170px"
