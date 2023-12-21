@@ -1,10 +1,10 @@
 import { EditIcon, SettingsIcon } from "@chakra-ui/icons"
 import { Grid, HStack, Heading, Link, Tab, TabList, TabPanel, TabPanels, Tabs, Text, VStack } from "@chakra-ui/react"
 
+import { Delivery, PersonalInfo } from "./components"
 import { CommentIcon, DeliveryAddressesIcon, ExitIcon, ListOrdersIcon, PaymentIcon } from "../../assets"
 import { Footer, Header } from "../../components"
 import { Card } from "../../components/card/Card"
-import { PersonalInfo } from "./components";
 
 const Profile = () => {
   const cardItems = [
@@ -47,10 +47,10 @@ const Profile = () => {
         <Heading>Личный кабинет</Heading>
         <Text>Здравствуйте, покупатель!</Text>
 
-        <HStack>
-          <HStack>
-            <Tabs display="flex">
-              <TabList display="flex" flexDirection="column" width="30%">
+        <HStack width="100%">
+          <HStack width="100%">
+            <Tabs display="flex" width="100%">
+              <TabList borderBottomWidth={0} display="flex" flexDirection="column" width="280px">
                 <Tab
                   _selected={{ background: "rgba(198, 197, 197, 0.50)" }}
                   borderBottomColor="#828282"
@@ -58,6 +58,7 @@ const Profile = () => {
                   px="40px"
                   py="20px"
                   whiteSpace="nowrap"
+                  width="280px"
                 >
                   Панель управления
                 </Tab>
@@ -120,8 +121,11 @@ const Profile = () => {
                     ))}
                   </Grid>
                 </TabPanel>
-                <TabPanel>
+                <TabPanel flex={1}>
                   <PersonalInfo />
+                </TabPanel>
+                <TabPanel>
+                  <Delivery />
                 </TabPanel>
               </TabPanels>
             </Tabs>
