@@ -7,11 +7,11 @@ const Footer = () => (
     gap="2rem"
     justifyContent="space-between"
     px="100px"
-    py="60px"
+    py="30px"
     width="100%"
   >
     <Box>
-      <Heading color="accent" fontSize="30px" fontWeight={600} mb="10px" textTransform="uppercase">
+      <Heading color="accent" fontSize="24px" fontWeight={600} mb="10px" textTransform="uppercase">
         workshop nina
       </Heading>
       <Text mb="10px">г. Гомель, ул. Советская 23</Text>

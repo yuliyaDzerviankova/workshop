@@ -1,12 +1,33 @@
 import { EditIcon, SettingsIcon } from "@chakra-ui/icons"
-import { Grid, HStack, Heading, Link, Tab, TabList, TabPanel, TabPanels, Tabs, Text, VStack } from "@chakra-ui/react"
+import {
+  Button,
+  Grid,
+  HStack,
+  Heading,
+  Link,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalOverlay,
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
+  Text,
+  VStack,
+  useDisclosure,
+} from "@chakra-ui/react"
 
-import { Delivery, PersonalInfo } from "./components"
+import { Delivery, Feedbacks, OrdersHistory, PersonalInfo } from "./components"
 import { CommentIcon, DeliveryAddressesIcon, ExitIcon, ListOrdersIcon, PaymentIcon } from "../../assets"
 import { Footer, Header } from "../../components"
 import { Card } from "../../components/card/Card"
 
 const Profile = () => {
+  const { onClose, isOpen, onOpen } = useDisclosure()
   const cardItems = [
     {
       icon: <EditIcon />,
@@ -102,16 +123,20 @@ const Profile = () => {
                 >
                   Отзывы
                 </Tab>
-                <Tab
-                  _selected={{ background: "rgba(198, 197, 197, 0.50)" }}
+                <Button
                   borderBottomColor="#828282"
                   borderBottomWidth={1}
+                  color="error"
+                  fontWeight={600}
+                  height="auto"
                   px="40px"
                   py="20px"
+                  variant="ghost"
                   whiteSpace="nowrap"
+                  onClick={onOpen}
                 >
                   Удаление аккаунта
-                </Tab>
+                </Button>
               </TabList>
               <TabPanels flex={1} ml="20px">
                 <TabPanel display="flex" flexWrap="wrap">
@@ -127,6 +152,12 @@ const Profile = () => {
                 <TabPanel>
                   <Delivery />
                 </TabPanel>
+                <TabPanel>
+                  <OrdersHistory />
+                </TabPanel>
+                <TabPanel>
+                  <Feedbacks />
+                </TabPanel>
               </TabPanels>
             </Tabs>
           </HStack>
@@ -135,6 +166,28 @@ const Profile = () => {
       </VStack>
 
       <Footer />
+
+      <Modal isOpen={isOpen} size="md" isCentered onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent p="40px">
+          <ModalCloseButton />
+          <ModalBody p={0}>
+            <Heading fontSize="20px" fontWeight={700} mb={5} textAlign="center">
+              Хотите удалить аккаунт?
+            </Heading>
+            <Text color="blackMain">
+              Вы уверены в том, что хотите удалить аккаунт? Данное действие необратимо и все ваши данные будут утеряны
+              навсегда.
+            </Text>
+          </ModalBody>
+          <ModalFooter alignItems="center" display="flex" justifyContent="space-between" mt="30px" p={0} width="100%">
+            <Button background="grayMain" color="whiteMain" w="150px" onClick={onClose}>
+              Назад
+            </Button>
+            <Button w="150px">Удалить</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </VStack>
   )
 }
