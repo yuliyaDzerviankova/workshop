@@ -16,10 +16,10 @@ const Card = ({ icon, title }: Props) => (
     flexDirection="column"
     h="170px"
     justifyContent="center"
-    w="340px"
+    w="300px"
   >
     {icon}
-    <Text color="blackMain" fontSize={18}>
+    <Text color="blackMain" fontSize={18} mt={3} textAlign="center">
       {title}
     </Text>
   </GridItem>

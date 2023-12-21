@@ -12,6 +12,7 @@ import Flower from "./flower.png"
 import FlowersIcon from "./flowers.png"
 import HomeIcon from "./home.png"
 import Korka from "./korka.png"
+import Logo from "./logo.png"
 import Rectangle from "./Rectangle 26.png"
 
 export {
@@ -30,6 +31,7 @@ export {
   Five,
   Six,
   Seven,
+  Logo,
 }
 
 export * from "./icons"

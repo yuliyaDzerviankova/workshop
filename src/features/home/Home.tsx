@@ -9,6 +9,7 @@ import {
   FlowersIcon,
   HomeIcon,
   Korka,
+  Logo,
   PhoneIcon,
   Rectangle,
 } from "../../assets"
@@ -212,7 +213,7 @@ const Home = () => (
       justifyContent="space-between"
       mt="70px"
       px="100px"
-      py="50px"
+      py="30px"
       width="100%"
     >
       <Flex direction="column">
@@ -223,10 +224,8 @@ const Home = () => (
           <ArrowForwardIcon color="link" />
         </Box>
       </Flex>
-      <Flex direction="column">
-        <Heading fontSize="60px" textTransform="uppercase">
-          workshop nina
-        </Heading>
+      <Flex direction="column" maxW="30%">
+        <Image maxW="300px" src={Logo} />
         <Text>и какая-нибудь подпись прикольная.</Text>
       </Flex>
     </Stack>

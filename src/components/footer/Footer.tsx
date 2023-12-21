@@ -11,11 +11,11 @@ const Footer = () => (
     width="100%"
   >
     <Box>
-      <Heading color="accent" fontSize="32px" mb="20px" textTransform="uppercase">
+      <Heading color="accent" fontSize="30px" fontWeight={600} mb="10px" textTransform="uppercase">
         workshop nina
       </Heading>
-      <Text mb="20px">г. Гомель, ул. Советская 23</Text>
-      <Text mb="20px">+375(29)555-55-55</Text>
+      <Text mb="10px">г. Гомель, ул. Советская 23</Text>
+      <Text mb="10px">+375(29)555-55-55</Text>
       <Text>gospodipomogi@gmail.com</Text>
     </Box>
     <Box>
