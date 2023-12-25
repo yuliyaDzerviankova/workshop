@@ -1,7 +1,7 @@
-import { Button, Flex, Heading, Link, List, ListItem } from "@chakra-ui/react"
+import { Button, Flex, Image, Link, List, ListItem } from "@chakra-ui/react"
 import { useNavigate } from "react-router-dom"
 
-import { CartIcon, SearchIcon, UserIcon } from "../../assets"
+import { CartIcon, Logo, SearchIcon, UserIcon } from "../../assets"
 
 const Header = () => {
   const navigate = useNavigate()
@@ -16,15 +16,14 @@ const Header = () => {
       textColor="whiteMain"
       width="100%"
     >
-      <Heading fontWeight="medium" textTransform="uppercase">
-        workshop nina
-      </Heading>
+      <Image maxW="200px" src={Logo} />
       <Flex>
         <List alignItems="center" display="flex" fontSize="md">
           <Link
             _hover={{
               textDecoration: "none",
             }}
+            onClick={() => navigate("/home")}
           >
             <ListItem
               _hover={{

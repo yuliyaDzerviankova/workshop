@@ -4,22 +4,23 @@ const Footer = () => (
   <HStack
     alignItems="flex-start"
     bgColor="link"
+    fontSize="14px"
     gap="2rem"
     justifyContent="space-between"
-    px="100px"
+    px="60px"
     py="30px"
     width="100%"
   >
     <Box>
-      <Heading color="accent" fontSize="24px" fontWeight={600} mb="10px" textTransform="uppercase">
+      <Heading color="accent" fontSize="22px" fontWeight={600} mb="10px" textTransform="uppercase">
         workshop nina
       </Heading>
-      <Text mb="10px">г. Гомель, ул. Советская 23</Text>
-      <Text mb="10px">+375(29)555-55-55</Text>
+      <Text mb={2}>г. Гомель, ул. Советская 23</Text>
+      <Text mb={2}>+375(29)555-55-55</Text>
       <Text>gospodipomogi@gmail.com</Text>
     </Box>
     <Box>
-      <Heading color="accent" fontSize="24px" mb="20px">
+      <Heading color="accent" fontSize="22px" fontWeight={600} mb="10px">
         Навигация
       </Heading>
       <List>
@@ -38,7 +39,7 @@ const Footer = () => (
       </List>
     </Box>
     <Box>
-      <Heading color="accent" fontSize="24px" mb="20px">
+      <Heading color="accent" fontSize="22px" fontWeight={600} mb="10px">
         Каталог
       </Heading>
       <List>
@@ -57,7 +58,7 @@ const Footer = () => (
       </List>
     </Box>
     <Box>
-      <Heading color="accent" fontSize="24px" mb="20px">
+      <Heading color="accent" fontSize="22px" fontWeight={600} mb="10px">
         Частые вопросы
       </Heading>
       <List>
@@ -75,12 +76,12 @@ const Footer = () => (
         </Link>
       </List>
     </Box>
-    <Box>
-      <Heading color="accent" fontSize="24px" mb="20px">
+    <Box maxW="450px">
+      <Heading color="accent" fontSize="22px" fontWeight={600} mb="10px">
         Время работы магазина:
       </Heading>
       <Text>Каждый день с 11:00 до 19:00</Text>
-      <Heading color="accent" fontSize="24px" mb="20px">
+      <Heading color="accent" fontSize="22px" fontWeight={600} mb="10px" mt={4}>
         Время принятия заказов online:
       </Heading>
       <Text>Каждый день с 11:00 до 19:00</Text>
