@@ -7,5 +7,7 @@ export const colors = {
   error: "#EA777D",
   link: "#828282",
   skin: "#F2C0AC",
-  grayOpacity: "rgba(198, 197, 197, 0.20)",
+  success: "#73BA68",
+  grayOpacity: "rgba(198, 197, 197, 0.2)",
+  grayHalfOpacity: "rgba(198, 197, 197, 0.5)",
 }

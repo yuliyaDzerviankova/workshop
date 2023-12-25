@@ -73,7 +73,8 @@ const Profile = () => {
             <Tabs display="flex" width="100%">
               <TabList borderBottomWidth={0} display="flex" flexDirection="column" width="280px">
                 <Tab
-                  _selected={{ background: "rgba(198, 197, 197, 0.50)" }}
+                  _hover={{ background: "grayOpacity" }}
+                  _selected={{ background: "grayHalfOpacity" }}
                   borderBottomColor="#828282"
                   borderBottomWidth={1}
                   px="40px"
@@ -84,7 +85,8 @@ const Profile = () => {
                   Панель управления
                 </Tab>
                 <Tab
-                  _selected={{ background: "rgba(198, 197, 197, 0.50)" }}
+                  _hover={{ background: "grayOpacity" }}
+                  _selected={{ background: "grayHalfOpacity" }}
                   borderBottomColor="#828282"
                   borderBottomWidth={1}
                   px="40px"
@@ -94,7 +96,8 @@ const Profile = () => {
                   Персональные данные
                 </Tab>
                 <Tab
-                  _selected={{ background: "rgba(198, 197, 197, 0.50)" }}
+                  _hover={{ background: "grayOpacity" }}
+                  _selected={{ background: "grayHalfOpacity" }}
                   borderBottomColor="#828282"
                   borderBottomWidth={1}
                   px="40px"
@@ -104,7 +107,8 @@ const Profile = () => {
                   Доставка и оплата
                 </Tab>
                 <Tab
-                  _selected={{ background: "rgba(198, 197, 197, 0.50)" }}
+                  _hover={{ background: "grayOpacity" }}
+                  _selected={{ background: "grayHalfOpacity" }}
                   borderBottomColor="#828282"
                   borderBottomWidth={1}
                   px="40px"
@@ -114,7 +118,8 @@ const Profile = () => {
                   История заказов
                 </Tab>
                 <Tab
-                  _selected={{ background: "rgba(198, 197, 197, 0.50)" }}
+                  _hover={{ background: "grayOpacity" }}
+                  _selected={{ background: "grayHalfOpacity" }}
                   borderBottomColor="#828282"
                   borderBottomWidth={1}
                   px="40px"
