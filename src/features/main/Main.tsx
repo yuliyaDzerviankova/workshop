@@ -15,7 +15,7 @@ import {
 } from "../../assets"
 import { Footer, Header } from "components"
 
-const Home = () => (
+const Main = () => (
   <Stack alignItems="flex-start" flex={1} width="100%">
     <Header />
     <Flex align="center" justify="space-between" px="100px" py="34px" width="100%">
@@ -243,4 +243,4 @@ const Home = () => (
   </Stack>
 )
 
-export { Home }
+export { Main }

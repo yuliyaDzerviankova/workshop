@@ -23,7 +23,7 @@ const Header = () => {
             _hover={{
               textDecoration: "none",
             }}
-            onClick={() => navigate("/home")}
+            onClick={() => navigate("/main")}
           >
             <ListItem
               _hover={{

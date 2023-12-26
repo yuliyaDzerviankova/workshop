@@ -31,7 +31,7 @@ const SignInPage = () => {
             </FormLabel>
             <Input placeholder="Введите пароль" width="100%" />
           </FormControl>
-          <Button bg="#DEEC00" color="#160202" fontWeight="normal" height="46px" onClick={() => navigate("/home")}>
+          <Button bg="#DEEC00" color="#160202" fontWeight="normal" height="46px" onClick={() => navigate("/main")}>
             Войти в аккаунт
           </Button>
           <Text color="#C6C5C5" textAlign="center">

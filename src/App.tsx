@@ -2,13 +2,13 @@ import { VStack } from "@chakra-ui/react"
 import { useRoutes } from "react-router-dom"
 
 import { Catalog } from "./features/catalog/Catalog"
-import { Cart, Home, Order, Profile, RegisterPage, SignInPage } from "features"
+import { Cart, Main, Order, Profile, RegisterPage, SignInPage } from "features"
 
 const App = () => {
   const routes = useRoutes([
-    { path: "/", element: <SignInPage /> },
+    { path: "/", element: <Main /> },
     { path: "/register", element: <RegisterPage /> },
-    { path: "/home", element: <Home /> },
+    { path: "/signin", element: <SignInPage /> },
     { path: "/catalog", element: <Catalog /> },
     { path: "/cart", element: <Cart /> },
     { path: "/order", element: <Order /> },
