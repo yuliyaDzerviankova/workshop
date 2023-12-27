@@ -1,5 +1,4 @@
-import { ArrowForwardIcon } from "@chakra-ui/icons"
-import { Flex, Heading, Link, Stack, Table, TableContainer, Tbody, Td, Text, Th, Thead, Tr } from "@chakra-ui/react"
+import { Flex, Heading, Stack, Table, TableContainer, Tbody, Td, Text, Th, Thead, Tr } from "@chakra-ui/react"
 
 type Order = {
   orderId: string

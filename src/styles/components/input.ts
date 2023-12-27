@@ -25,6 +25,10 @@ export const Input = {
           color: "gray",
           fontSize: "sm",
         },
+        _focus: {
+          borderColor: "error",
+          outline: "none",
+        },
       },
     },
   },

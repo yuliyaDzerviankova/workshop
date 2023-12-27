@@ -34,35 +34,42 @@ const Profile = () => {
     {
       icon: <EditIcon height="35px" width="35px" />,
       title: "Заполнение контактных данных",
+      onClick: () => console.log("edit"),
     },
     {
       icon: <ListOrdersIcon height="35px" width="35px" />,
       title: "Список ваших заказов",
+      onClick: () => console.log("list"),
     },
     {
       icon: <DeliveryAddressesIcon height="35px" width="35px" />,
       title: "Адреса для доставки",
+      onClick: () => console.log("addresses"),
     },
     {
       icon: <PaymentIcon height="35px" width="35px" />,
       title: "Добавление карты для оплаты",
+      onClick: () => console.log("payment"),
     },
     {
       icon: <SettingsIcon height="35px" width="35px" />,
       title: "Смена пароля",
+      onClick: () => console.log("change password"),
     },
     {
       icon: <CommentIcon height="35px" width="35px" />,
       title: "Ваши отзывы",
+      onClick: () => console.log("feedback"),
     },
     {
       icon: <ExitIcon height="35px" width="35px" />,
       title: "Выход",
+      onClick: () => navigate("/signin"),
     },
   ]
 
   return (
-    <VStack flex={1} width="100%" background="whiteMain">
+    <VStack background="whiteMain" flex={1} width="100%">
       <Header />
 
       <VStack alignItems="flex-start" flex={1} px="100px" py="40px" width="100%">
@@ -103,8 +110,8 @@ const Profile = () => {
               <TabPanels flex={1} ml="20px">
                 <TabPanel display="flex" flexWrap="wrap" p={0}>
                   <Grid gap={5} templateColumns="repeat(3, 1fr)">
-                    {cardItems.map(({ icon, title }) => (
-                      <Card key={title} icon={icon} title={title} />
+                    {cardItems.map(({ icon, title, onClick }) => (
+                      <Card key={title} icon={icon} title={title} onClick={onClick} />
                     ))}
                   </Grid>
                 </TabPanel>
