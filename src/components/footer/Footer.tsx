@@ -24,16 +24,16 @@ const Footer = () => (
         Навигация
       </Heading>
       <List>
-        <Link>
+        <Link variant="footermenu">
           <ListItem>Главная</ListItem>
         </Link>
-        <Link>
+        <Link variant="footermenu">
           <ListItem>Каталог</ListItem>
         </Link>
-        <Link>
+        <Link variant="footermenu">
           <ListItem>Контакты</ListItem>
         </Link>
-        <Link>
+        <Link variant="footermenu">
           <ListItem>Личный кабинет</ListItem>
         </Link>
       </List>
@@ -43,16 +43,16 @@ const Footer = () => (
         Каталог
       </Heading>
       <List>
-        <Link>
+        <Link variant="footermenu">
           <ListItem>Цветы</ListItem>
         </Link>
-        <Link>
+        <Link variant="footermenu">
           <ListItem>Уходовое</ListItem>
         </Link>
-        <Link>
+        <Link variant="footermenu">
           <ListItem>Для дома</ListItem>
         </Link>
-        <Link>
+        <Link variant="footermenu">
           <ListItem>Свечи и дифузоры</ListItem>
         </Link>
       </List>
@@ -62,16 +62,16 @@ const Footer = () => (
         Частые вопросы
       </Heading>
       <List>
-        <Link>
+        <Link variant="footermenu">
           <ListItem>Как какать?</ListItem>
         </Link>
-        <Link>
+        <Link variant="footermenu">
           <ListItem>2+2=?</ListItem>
         </Link>
-        <Link>
+        <Link variant="footermenu">
           <ListItem>Теорема Пифагора</ListItem>
         </Link>
-        <Link>
+        <Link variant="footermenu">
           <ListItem>Какой камбэк у ВР?</ListItem>
         </Link>
       </List>

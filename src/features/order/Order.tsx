@@ -22,12 +22,36 @@ import {
   VStack,
   useDisclosure,
 } from "@chakra-ui/react"
+import { ReactElement } from "react"
+import { useNavigate } from "react-router-dom"
 
-import { SuccessIcon, Two } from "assets"
+import { One, SuccessIcon, Three, Two } from "assets"
 import { Footer, Header } from "components"
 
+type OrderDetails = {
+  id: string
+  image: ReactElement
+  name: string
+  price: number
+}
+
 const Order = () => {
+  const navigate = useNavigate()
   const { onClose, isOpen, onOpen } = useDisclosure()
+  const orderDetails: OrderDetails[] = [
+    {
+      id: "1",
+      image: <Image maxH="150px" src={One} />,
+      name: "Букет сборный",
+      price: 120,
+    },
+    {
+      id: "2",
+      image: <Image maxH="150px" src={Three} />,
+      name: "Букет сборный",
+      price: 270,
+    },
+  ]
 
   return (
     <VStack alignItems="flex-start" justifyItems="flex-start" width="100%">
@@ -36,15 +60,15 @@ const Order = () => {
         <Link>Главная - Каталог - Корзина</Link>
         <Heading fontWeight={600}>Оформление заказа</Heading>
         <Flex mt="30px" width="100%">
-          <VStack alignItems="flex-start" background="rgba(198, 197, 197, 0.20)" flex={1} gap={4} p="15px" width="100%">
+          <VStack alignItems="flex-start" background="grayOpacity" flex={1} gap={4} p="15px" width="100%">
             <Text>Вы авторизованы как Валентина</Text>
             <FormControl>
               <FormLabel>Выберите способ доставки</FormLabel>
-              <RadioGroup>
-                <Radio>Самовывоз</Radio>
-                <Radio>Курьером или почтой</Radio>
+              <RadioGroup display="flex" flexDirection="column">
+                <Radio value="own">Самовывоз</Radio>
+                <Radio value="delivery">Курьером или почтой</Radio>
               </RadioGroup>
-              <FormHelperText>Способ не выбран</FormHelperText>
+              <FormHelperText color="error" fontSize="sm">Способ не выбран</FormHelperText>
             </FormControl>
 
             <Box>
@@ -62,31 +86,16 @@ const Order = () => {
             </Box>
 
             <Input
-              background="#FAF6F6"
+              background="whiteMain"
               borderColor="link"
-              borderRadius={0}
               borderWidth={1}
               placeholder="Город, улица, дом"
               width="100%"
             />
             <Flex>
-              <Input
-                background="#FAF6F6"
-                borderColor="link"
-                borderRadius={0}
-                borderWidth={1}
-                mr="20px"
-                placeholder="Квартира"
-              />
-              <Input
-                background="#FAF6F6"
-                borderColor="link"
-                borderRadius={0}
-                borderWidth={1}
-                mr="20px"
-                placeholder="Подъезд"
-              />
-              <Input background="#FAF6F6" borderColor="link" borderRadius={0} borderWidth={1} placeholder="Этаж" />
+              <Input background="whiteMain" borderColor="link" borderWidth={1} mr="20px" placeholder="Квартира" />
+              <Input background="whiteMain" borderColor="link" borderWidth={1} mr="20px" placeholder="Подъезд" />
+              <Input background="whiteMain" borderColor="link" borderRadius={0} borderWidth={1} placeholder="Этаж" />
             </Flex>
             <Button background="accent" borderRadius={0} fontWeight={400}>
               Изменить
@@ -94,77 +103,62 @@ const Order = () => {
 
             <FormControl>
               <FormLabel>Комментарий к заказу</FormLabel>
-              <Input
-                background="#FAF6F6"
-                borderColor="link"
-                borderRadius={0}
-                borderWidth={1}
-                placeholder="Введите комментарий"
-              />
+              <Input background="whiteMain" borderColor="link" borderWidth={1} placeholder="Введите комментарий" />
             </FormControl>
             <Flex justify="space-between" width="100%">
               <FormControl>
                 <FormLabel>Получатель</FormLabel>
-                <Input
-                  background="#FAF6F6"
-                  borderColor="link"
-                  borderRadius={0}
-                  borderWidth={1}
-                  placeholder="Шишкова Валентина"
-                />
+                <Input background="whiteMain" borderColor="link" borderWidth={1} placeholder="Шишкова Валентина" />
               </FormControl>
               <FormControl ml="20px">
                 <FormLabel>Номер телефона</FormLabel>
-                <Input
-                  background="#FAF6F6"
-                  borderColor="link"
-                  borderRadius={0}
-                  borderWidth={1}
-                  placeholder="+375293195299"
-                />
+                <Input background="whiteMain" borderColor="link" borderWidth={1} placeholder="+375293195299" />
               </FormControl>
             </Flex>
           </VStack>
 
           <VStack flex={1} ml="35px">
-            <HStack borderBottomColor="#C6C5C5" borderBottomWidth={1} pb={4} position="relative" width="100%">
-              <CloseIcon position="absolute" right={0} top={0} />
-              <Image maxH="150px" src={Two} />
-              <Text>Букет сборный</Text>
-              <Text>12314 р.</Text>
-            </HStack>
-
-            <HStack mt={4} position="relative" width="100%">
-              <CloseIcon position="absolute" right={0} top={0} />
-              <Image maxH="150px" src={Two} />
-              <Text>Букет сборный</Text>
-              <Text>12314 р.</Text>
-            </HStack>
+            {orderDetails.map((item) => (
+              <HStack
+                key={item.id}
+                _notFirst={{ mt: 4 }}
+                borderBottomColor="#C6C5C5"
+                borderBottomWidth={1}
+                pb={4}
+                position="relative"
+                width="100%"
+              >
+                <CloseIcon position="absolute" right={0} top={0} />
+                {item.image}
+                <Text>{item.name}</Text>
+                <Text>{item.price} р.</Text>
+              </HStack>
+            ))}
 
             <Flex align="center" justify="space-between" mt="30px" width="100%">
               <Text>Сумма:</Text>
-              <Text>36942 р.</Text>
+              <Text fontWeight={600}>36942 р.</Text>
             </Flex>
             <Flex align="center" justify="space-between" width="100%">
               <Text>Доставка:</Text>
-              <Text>42 р.</Text>
+              <Text fontWeight={600}>42 р.</Text>
             </Flex>
           </VStack>
         </Flex>
 
         <VStack align="flex-end" flex={1} width="100%">
-          <Box alignItems="flex-end" display="flex" flexDirection="column" maxW="20%">
+          <Box alignItems="flex-end" display="flex" flexDirection="column" maxW="25%">
             <Flex align="center" justify="space-between" width="100%">
               <Text>Итого:</Text>
-              <Text>36942 р.</Text>
+              <Text fontWeight={600}>36942 р.</Text>
             </Flex>
             <Button background="accent" borderRadius={0} my={4} width="100%" onClick={onOpen}>
               Оформить заказ
             </Button>
-            <Text color="error" fontSize={14}>
+            <Text color="error" fontSize="sm">
               Проверьте правильность данных!
             </Text>
-            <Button background="grayMain" borderRadius={0} fontWeight={400} mt={4}>
+            <Button background="grayMain" borderRadius={0} fontWeight={400} mt={4} onClick={() => navigate("/cart")}>
               Вернуться в корзину
             </Button>
           </Box>

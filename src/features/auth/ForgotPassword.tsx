@@ -19,7 +19,7 @@ type Values = {
   password: string
 }
 
-const SignInPage = () => {
+const ForgotPassword = () => {
   const navigate = useNavigate()
   const {
     control,
@@ -35,13 +35,13 @@ const SignInPage = () => {
 
   return (
     <Stack bg="#FAF6F6" borderRadius="10px" maxW="50%" minW="30%">
-      <Box borderBottomColor="#grayMain" borderBottomWidth="1px" py={4}>
-        <Text fontSize="20px" fontWeight={600} textAlign="center" textTransform="uppercase">
+      <Box borderBottomColor="#C6C5C5" borderBottomWidth="1px" py="18px">
+        <Text fontSize="20px" fontWeight="bold" textAlign="center" textTransform="uppercase">
           workshop nina
         </Text>
       </Box>
-      <Flex direction="column" pb="60px" pt={4} px="50px">
-        <Text color="blackMain" fontSize="20px" fontWeight={500} textAlign="center">
+      <Flex direction="column" pb="60px" pt="20px" px="50px">
+        <Text fontSize="20px" textAlign="center">
           С возвращением!
         </Text>
         <Stack as="form" pt="30px" onSubmit={handleSubmit(onSignin)}>
@@ -77,10 +77,10 @@ const SignInPage = () => {
             // isInvalid={fieldState.invalid}
             // isReadOnly={formState.isSubmitting}
             label="Номер телефона"
-            mb={4}
+            mb="20px"
             isRequired
           >
-            <FormLabel requiredIndicator>
+            <FormLabel color="#241111" mb="10px" mr="auto" requiredIndicator>
               Номер телефона
               {/*{fieldState.error?.message && (*/}
               <FormErrorMessage m="-4px 0 0 8px" position="relative" variant="tooltip" zIndex={1}>
@@ -96,12 +96,12 @@ const SignInPage = () => {
             // isInvalid={fieldState.invalid}
             // isReadOnly={formState.isSubmitting}
             label="Пароль"
-            mb={4}
+            mb="20px"
             isRequired
           >
-            <FormLabel alignItems="center" display="flex" justifyContent="space-between" requiredIndicator>
+            <FormLabel color="#241111" mb="10px" mr="auto" requiredIndicator>
               Пароль
-              <Link textDecoration="underline" onClick={() => navigate("/forgotPassword")}>Забыли?</Link>
+              {/*{fieldState.error?.message && (*/}
               <FormErrorMessage m="-4px 0 0 8px" position="relative" variant="tooltip" zIndex={1}>
                 Введите пароль
                 {errors.phoneNumber?.message}
@@ -147,7 +147,14 @@ const SignInPage = () => {
           <Text color="#C6C5C5" textAlign="center">
             или
           </Text>
-          <Link textAlign="center" textDecoration="underline" onClick={() => navigate("/register")}>
+          <Link
+            color="#828282"
+            fontWeight="normal"
+            textAlign="center"
+            textDecoration="underline"
+            variant="ghost"
+            onClick={() => navigate("/register")}
+          >
             Зарегистрироваться
           </Link>
         </Stack>
@@ -156,4 +163,4 @@ const SignInPage = () => {
   )
 }
 
-export { SignInPage }
+export { ForgotPassword }

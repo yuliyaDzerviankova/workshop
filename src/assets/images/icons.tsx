@@ -16,6 +16,7 @@ export const UserIcon = createIcon({
     <>
       <path
         d="M11 10.4583C13.3932 10.4583 15.3333 8.51822 15.3333 6.12499C15.3333 3.73176 13.3932 1.79166 11 1.79166C8.60673 1.79166 6.66663 3.73176 6.66663 6.12499C6.66663 8.51822 8.60673 10.4583 11 10.4583Z"
+        fill="none"
         stroke="#FAF6F6"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -23,6 +24,7 @@ export const UserIcon = createIcon({
       />
       <path
         d="M20.75 24.2083C20.75 18.8236 16.3847 14.4583 11 14.4583C5.61529 14.4583 1.25 18.8236 1.25 24.2083"
+        fill="none"
         stroke="#FAF6F6"
         strokeLinecap="round"
         strokeLinejoin="round"

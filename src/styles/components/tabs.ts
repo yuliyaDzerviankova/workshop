@@ -1,0 +1,85 @@
+export const Tabs = {
+  sizes: {
+    xs: {
+      tab: {
+        py: 1,
+        px: 2,
+        fontSize: "xs",
+      },
+    },
+    sm: {
+      tab: {
+        py: 1,
+        px: 2,
+        fontSize: "sm",
+      },
+    },
+    md: {
+      tab: {
+        fontSize: "md",
+        py: 2,
+        px: 3,
+      },
+    },
+    lg: {
+      tab: {
+        fontSize: "lg",
+        py: 3,
+        px: 4,
+      },
+    },
+  },
+  variants: {
+    line: {
+      tablist: {
+        borderBottomColor: "transparent",
+      },
+      tab: {
+        fontSize: "2xl",
+        fontWeight: 400,
+        borderBottomWidth: 3,
+        color: "blackMain",
+        marginBottom: "-1px",
+        _focus: {
+          boxShadow: "focus",
+        },
+        _hover: {
+          color: "active.primary.01",
+          borderBottomColor: "ui.02",
+        },
+        _active: {
+          bg: "transparent",
+        },
+        _selected: {
+          borderBottomWidth: 3,
+          borderBottomColor: "accent",
+          _hover: {
+            borderBottomColor: "active.primary.01",
+          },
+        },
+      },
+    },
+    "soft-rounded": {
+      tab: {
+        color: "interactive.05",
+        borderColor: "transparent",
+        borderWidth: 1,
+        fontWeight: "normal",
+        _focus: {
+          boxShadow: "focus",
+        },
+        _hover: {
+          color: "active.primary.01",
+        },
+        _selected: {
+          bg: "white",
+          borderWidth: 1,
+          borderColor: "active.primary.01",
+        },
+      },
+    },
+  },
+  defaultProps: {
+    variant: "line",
+  },
+}

@@ -25,6 +25,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react"
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 import {
   DeliveryIcon,
@@ -42,6 +43,7 @@ import {
 import { Footer, Header } from "components"
 
 const Catalog = () => {
+  const navigate = useNavigate()
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [showFeed, setShowFeed] = useState(false)
 
@@ -111,83 +113,78 @@ const Catalog = () => {
           <ModalContent p="50px">
             <ModalCloseButton />
             <ModalBody p={0}>
-              <HStack alignItems="flex-start" gap="30px" justifyContent="space-between">
+              <HStack alignItems="flex-start" justifyContent="space-between">
                 <Box>
-                  <Image src={One} />
-                  <Box alignItems="center" display="flex" maxH="125px" maxW="125px" mt="30px">
-                    <Image mr="30px" src={One} />
+                  <Image maxW="350px" src={One} />
+                  <Box alignItems="center" display="flex" maxH="100px" maxW="100px" mt={6}>
+                    <Image mr={6} src={One} />
                     <Image src={One} />
                   </Box>
                 </Box>
-                <VStack alignItems="flex-start" width="50%">
-                  <Link color="grayMain" textDecoration="underline">
-                    Цветы
-                  </Link>
+                <VStack alignItems="flex-start" width="60%">
+                  <Link textDecoration="underline">Цветы</Link>
                   <Flex alignItems="flex-start" justifyContent="space-between" width="100%">
-                    <Heading fontSize="40px" fontWeight="500" mb={2}>
+                    <Heading fontSize="4xl" fontWeight="500" mb={2}>
                       Букет сборный
                     </Heading>
                     <Text color="link">В наличии: 1</Text>
                   </Flex>
-                  <Heading fontSize="32px" fontWeight="400">
+                  <Heading fontSize="2xl" fontWeight="400">
                     Цена 145 р.
                   </Heading>
 
                   <Flex align="center" mb="20px" mt="80px">
-                    <Button background="grayMain" borderRadius={0} fontSize="24px">
+                    <Button background="grayMain" borderRadius={0} fontSize="3xl">
                       +
                     </Button>
                     <Text mx={3}>1</Text>
-                    <Button background="grayMain" borderRadius={0} fontSize="24px">
+                    <Button background="grayMain" borderRadius={0} fontSize="3xl">
                       -
                     </Button>
-                    <Text fontSize="30px" ml="20px">
+                    <Text fontSize="2xl" ml="20px">
                       145 р.
                     </Text>
                   </Flex>
 
                   <Flex align="center" width="100%">
-                    <Button background="accent" flex={1} textTransform="uppercase">
+                    <Button
+                      background="accent"
+                      flex={1}
+                      fontWeight={400}
+                      maxW="300px"
+                      textTransform="uppercase"
+                      onClick={() => navigate("/cart")}
+                    >
                       В корзину
                     </Button>
-                    <Button leftIcon={<DeliveryIcon />} ml={2} size="sm" variant="ghost">
+                    <Button fontWeight={500} leftIcon={<DeliveryIcon />} ml={2} size="sm" variant="ghost">
                       О доставке
                     </Button>
-                    <Button leftIcon={<PaymentIcon />} ml={2} size="sm" variant="ghost">
+                    <Button fontWeight={500} leftIcon={<PaymentIcon />} ml={2} size="sm" variant="ghost">
                       Об оплате
                     </Button>
                   </Flex>
 
-                  <Tabs mt="20px">
+                  <Tabs mt="20px" width="100%">
                     <TabList>
-                      <Tab fontSize="28px" fontWeight="400">
-                        Описание
-                      </Tab>
-                      <Tab fontSize="28px" fontWeight="400">
-                        Состав
-                      </Tab>
-                      <Tab fontSize="28px" fontWeight="400">
-                        Отзывы
-                      </Tab>
+                      <Tab>Описание</Tab>
+                      <Tab>Состав</Tab>
+                      <Tab>Отзывы</Tab>
                     </TabList>
 
                     <TabPanels>
                       <TabPanel px={0}>
-                        <Text>
-                          Букет такой-то такого-то цвета в такой упаковке что-то может быть еще захочется сказать а
-                          можно на этом и закончить.
-                        </Text>
+                        <Text>Нежный весенний букет, который подарит вашему интерьеру легкость.</Text>
                       </TabPanel>
                       <TabPanel px={0}>
-                        <Text>Там есть вот это, а еще вот это и это.</Text>
+                        <Text>Георгины, колокольчики, диантусы.</Text>
                       </TabPanel>
                       <TabPanel px={0}>
-                        <Box background="#F2C0AC">
-                          <Text>Ефросиния</Text>
-                          <Text>
-                            Заходит как-то улитка в бар и говорит: "Бармен, налей мне стакан воды". Бармен наливает
-                            стакан воды и отдает улитке, а та забирает его и уходит.
+                        <Box background="#F2C0AC" p={4}>
+                          <Text fontSize="xl" fontWeight={500} mb={4}>
+                            Ефросиния
                           </Text>
+                          <Text fontWeight={400}>Букет отличный!</Text>
                         </Box>
                         <Box mt={4}>
                           <Button
@@ -207,7 +204,7 @@ const Catalog = () => {
                         {showFeed && (
                           <Box mt={4}>
                             <Textarea
-                              background="rgba(198, 197, 197, 0.20)"
+                              background="grayOpacity"
                               borderRadius={0}
                               borderWidth={0}
                               h="200px"
@@ -234,9 +231,9 @@ const Catalog = () => {
                     </TabPanels>
                   </Tabs>
 
-                  <Box background="#F6E5B9" mt="30px" px="40px" py="20px">
+                  <Box background="#F6E5B9" mt={6} px={8} py={4}>
                     <Text textAlign="center">Цвета на картинке могут немного отличаться оттенками.</Text>
-                    <Text mt="20px" textAlign="center">
+                    <Text mt={3} textAlign="center">
                       Продавец расскажет вам подробнее об этом после оформления заказа.
                     </Text>
                   </Box>

@@ -18,6 +18,7 @@ export const Input = {
         borderRadius: 0,
         _placeholder: {
           color: "text.03",
+          fontSize: "sm",
         },
       },
     },

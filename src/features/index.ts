@@ -2,6 +2,8 @@ export * from "./auth/RegisterPage"
 
 export * from "./auth/SignInPage"
 
+export * from "./auth/ForgotPassword"
+
 export * from "./main/Main"
 
 export * from "./cart/Cart"
