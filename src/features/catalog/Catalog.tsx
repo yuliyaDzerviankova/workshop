@@ -50,7 +50,7 @@ const Catalog = () => {
   const handleShowFeed = () => setShowFeed(!showFeed)
 
   return (
-    <Box>
+    <Box background="whiteMain">
       <Header />
       <VStack alignItems="flex-start" gap="20px" pb="100px" pt="40px" px="100px">
         <Link>Главная</Link>

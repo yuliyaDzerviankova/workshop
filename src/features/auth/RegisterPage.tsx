@@ -6,7 +6,7 @@ const RegisterPage = () => {
 
   return (
     <Stack alignItems="center" justifyContent="center" width="100%">
-      <Stack bg="grayMain" borderRadius="10px" gap={0} width="450px">
+      <Stack bg="whiteMain" borderRadius="10px" gap={0} width="450px">
         <Box borderBottomColor="grayMain" borderBottomWidth="1px" py={4}>
           <Text fontSize="20px" fontWeight={600} textAlign="center" textTransform="uppercase">
             workshop nina

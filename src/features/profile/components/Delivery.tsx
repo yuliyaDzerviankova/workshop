@@ -57,9 +57,9 @@ const Delivery = () => (
         </FormControl>
       </GridItem>
     </Grid>
-    <Text color="error" fontSize="sm" fontWeight={500}>
-      Данные введены некорректно
-    </Text>
+    {/*<Text color="error" fontSize="sm" fontWeight={500}>*/}
+    {/*  Данные введены некорректно*/}
+    {/*</Text>*/}
 
     <Link alignItems="center" display="flex" my={4}>
       <AddIcon mr={3} />

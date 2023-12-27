@@ -62,7 +62,7 @@ const Profile = () => {
   ]
 
   return (
-    <VStack flex={1} width="100%">
+    <VStack flex={1} width="100%" background="whiteMain">
       <Header />
 
       <VStack alignItems="flex-start" flex={1} px="100px" py="40px" width="100%">

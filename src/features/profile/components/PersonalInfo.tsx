@@ -11,7 +11,7 @@ const PersonalInfo = () => (
         <Input placeholder="Введите имя" />
       </FormControl>
       <FormControl isRequired>
-        <FormLabel>Фамиилия</FormLabel>
+        <FormLabel>Фамилия</FormLabel>
         <Input placeholder="Введите фамилию" />
       </FormControl>
       <FormControl>
@@ -37,23 +37,23 @@ const PersonalInfo = () => (
       <FormControl isRequired>
         <FormLabel>Введите старый пароль</FormLabel>
         <Input placeholder="Введите старый пароль" />
-        <FormHelperText color="error" fontSize="sm" fontWeight={500}>
-          Пароль введен неверно
-        </FormHelperText>
+        {/*<FormHelperText color="error" fontSize="sm" fontWeight={500}>*/}
+        {/*  Пароль введен неверно*/}
+        {/*</FormHelperText>*/}
       </FormControl>
       <FormControl mt={4} isRequired>
         <FormLabel>Введите новый пароль</FormLabel>
         <Input placeholder="Введите новый пароль" />
-        <FormHelperText color="error" fontSize="sm" fontWeight={500}>
-          Пароль введен неверно
-        </FormHelperText>
+        {/*<FormHelperText color="error" fontSize="sm" fontWeight={500}>*/}
+        {/*  Пароль введен неверно*/}
+        {/*</FormHelperText>*/}
       </FormControl>
       <FormControl mt={4} isRequired>
         <FormLabel>Повторите новый пароль</FormLabel>
         <Input placeholder="Повторите новый пароль" />
-        <FormHelperText color="error" fontSize="sm" fontWeight={500}>
-          Пароль введен неверно
-        </FormHelperText>
+        {/*<FormHelperText color="error" fontSize="sm" fontWeight={500}>*/}
+        {/*  Пароль введен неверно*/}
+        {/*</FormHelperText>*/}
       </FormControl>
     </Stack>
     <Button alignSelf="self-end" background="accent" borderRadius={0} fontWeight={400}>

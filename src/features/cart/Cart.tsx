@@ -50,7 +50,7 @@ const Cart = () => {
   ]
 
   return (
-    <Box width="100%">
+    <Box width="100%" background="whiteMain">
       <Header />
       <VStack alignItems="flex-start" px="100px" py="40px">
         <Flex>
