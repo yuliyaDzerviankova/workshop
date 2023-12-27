@@ -1,5 +1,5 @@
 import { ArrowForwardIcon, ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons"
-import { Box, Flex, Heading, Image, Link, Stack, Text, VStack } from "@chakra-ui/react"
+import { Box, Flex, Grid, GridItem, Heading, Image, Link, Stack, Text, VStack } from "@chakra-ui/react"
 
 import {
   BodycareIcon,
@@ -16,7 +16,7 @@ import {
 import { Footer, Header } from "components"
 
 const Main = () => (
-  <Stack alignItems="flex-start" flex={1} width="100%">
+  <Stack alignItems="flex-start" background="whiteMain" flex={1} width="100%">
     <Header />
     <Flex align="center" justify="space-between" px="100px" py="34px" width="100%">
       <Text color="#A77E50" fontSize="18px">
@@ -102,8 +102,10 @@ const Main = () => (
     </VStack>
 
     <VStack pt="80px" px="100px">
-      <Heading>Популярное</Heading>
-      <Flex>
+      <Heading fontWeight={600} textAlign="left" width="100%">
+        Популярное
+      </Heading>
+      <Flex mt={5}>
         <Image maxH="350px" pr="20px" src={Rectangle} />
         <Box pr="20px">
           <Image pb="20px" src={Korka} width="560px" />
@@ -133,78 +135,72 @@ const Main = () => (
       <Heading fontSize="40px" fontWeight="600" mb="40px">
         Отзывы
       </Heading>
-      <Flex flex="1" justify="space-between" width="100%">
-        <Box
+      <Grid gap={5} templateColumns="repeat(3, 1fr)">
+        <GridItem
           bgColor="#AF814D"
           borderBottomLeftRadius={0}
           borderBottomRightRadius="20px"
           borderTopLeftRadius="20px"
           borderTopRightRadius="20px"
-          p="40px"
+          px={8}
+          py={7}
         >
-          <Flex justify="space-between" mb="40px">
-            <Text color="whiteMain" fontSize="24px">
-              Ефросиния
+          <Flex alignItems="center" justify="space-between" mb="40px">
+            <Text color="whiteMain" fontSize="2xl" fontWeight={500}>
+              Дмитрий
             </Text>
-            <Flex align="center" justify="space-between">
-              <Link>перейти к товару</Link>
-              <ArrowForwardIcon color="link" ml="10px" width="20px" />
-            </Flex>
+            <Link color="blackOpacity">
+              перейти к товару <ArrowForwardIcon color="blackOpacity" ml={2} width="20px" />
+            </Link>
           </Flex>
-          <Text color="whiteMain">
-            Заходит как-то улитка в бар и говорит: “Бармен, налей мне стакан воды. Бармен наливает стакан воды и отдает
-            улитке, а та забирает его и уходит.
+          <Text color="whiteMain" fontSize="sm" fontWeight={400}>
+            Я полностью доволен опытом покупки в интернет-магазине. Легкое и интуитивно понятное приложение. Заказал
+            прекрасный букет для своей возлюбленной.
           </Text>
-        </Box>
-
-        <Box
+        </GridItem>
+        <GridItem
           bgColor="#F6E5B9"
           borderBottomLeftRadius={0}
           borderBottomRightRadius="20px"
           borderTopLeftRadius="20px"
           borderTopRightRadius="20px"
-          ml="20px"
-          p="40px"
+          px={8}
+          py={7}
         >
-          <Flex justify="space-between" mb="40px">
-            <Text color="black" fontSize="24px">
+          <Flex alignItems="center" justify="space-between" mb="40px">
+            <Text color="blackMain" fontSize="2xl" fontWeight={500}>
               Аркадий
             </Text>
-            <Flex align="center" justify="space-between">
-              <Link>перейти к товару</Link>
-              <ArrowForwardIcon color="link" ml="10px" width="20px" />
-            </Flex>
+            <Link color="blackOpacity">
+              перейти к товару <ArrowForwardIcon color="blackOpacity" ml={2} width="20px" />
+            </Link>
           </Flex>
-          <Text>
-            Через неделю улитка снова приходит в бар и просит у бармена стакан с водой. Тот без вопросов наливает и
-            отдает. Улитка снова уходит.
+          <Text fontSize="sm" fontWeight={400}>
+            Цены в Nina приятные, а качество цветов всегда на высоте. Очень доволен своими покупками.
           </Text>
-        </Box>
-
-        <Box
-          bgColor="#F2C0AC"
+        </GridItem>
+        <GridItem
+          bgColor="skin"
           borderBottomLeftRadius={0}
           borderBottomRightRadius="20px"
           borderTopLeftRadius="20px"
           borderTopRightRadius="20px"
-          ml="20px"
-          p="40px"
+          px={8}
+          py={7}
         >
-          <Flex justify="space-between" mb="40px">
-            <Text color="whiteMain" fontSize="24px">
+          <Flex alignItems="center" justify="space-between" mb="40px">
+            <Text color="blackMain" fontSize="2xl" fontWeight={500}>
               Ибрагим
             </Text>
-            <Flex align="center" justify="space-between">
-              <Link>перейти к товару</Link>
-              <ArrowForwardIcon color="link" ml="10px" width="20px" />
-            </Flex>
+            <Link color="blackOpacity">
+              перейти к товару <ArrowForwardIcon color="blackOpacity" ml={2} width="20px" />
+            </Link>
           </Flex>
-          <Text>
-            Через неделю улитка возвращается и снова просит стакан воды, бармен спрашивает, зачем вообще улитке вода.
-            Она отвечает: “Да у меня дом горит просто”.
+          <Text fontSize="sm" fontWeight={400}>
+            Здесь можно найти редкие и экзотические цветы. Они всегда удивляют своим ассортиментом.
           </Text>
-        </Box>
-      </Flex>
+        </GridItem>
+      </Grid>
     </Stack>
 
     <Stack
@@ -226,17 +222,19 @@ const Main = () => (
       </Flex>
       <Flex direction="column" maxW="30%">
         <Image maxW="300px" src={Logo} />
-        <Text>и какая-нибудь подпись прикольная.</Text>
+        <Text color="blackMain" fontWeight={400}>
+          Workshop of flowers and aesthetic things
+        </Text>
       </Flex>
     </Stack>
 
     <Stack direction="row" justify="space-between" px="100px" py="30px" width="100%">
-      <Text>здесь можно</Text>
-      <Text>оставить названия</Text>
-      <Text>брендов</Text>
-      <Text>с которыми</Text>
-      <Text>сотрудничает</Text>
-      <Text>магазин</Text>
+      <Text>so.warm</Text>
+      <Text>ECO.EVA.DESIGN</Text>
+      <Text>PURELY CARE</Text>
+      <Text>ZOYA</Text>
+      <Text>D. Engel</Text>
+      <Text>ВРЕМЕ-НАМИ</Text>
     </Stack>
 
     <Footer />

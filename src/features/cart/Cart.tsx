@@ -33,7 +33,7 @@ const Cart = () => {
   const flowers: Flower[] = [
     {
       id: "1",
-      image: <Image maxH="200px" src={One} />,
+      image: <Image maxW="200px" src={One} />,
       name: "Букет сборный",
       description: "гергины, колокольчики, скабиоза, кампанула, патирус.",
       count: 1,
@@ -41,7 +41,7 @@ const Cart = () => {
     },
     {
       id: "2",
-      image: <Image maxH="200px" src={Three} />,
+      image: <Image maxW="200px" src={Three} />,
       name: "Букет сборный",
       description: "антуриум, альстромерии, георгины, диантусы.",
       count: 2,
@@ -64,7 +64,7 @@ const Cart = () => {
         </Flex>
         <Heading fontWeight={600}>Корзина</Heading>
         <Grid gap={6} templateColumns="repeat(6, 1fr)" width="100%">
-          <GridItem />
+          <GridItem colSpan={1} />
           <GridItem alignItems="center" colSpan={2} display="flex" textAlign="left">
             <Text>Товар</Text>
           </GridItem>
@@ -87,8 +87,9 @@ const Cart = () => {
             gap={6}
             py={4}
             templateColumns="repeat(6, 1fr)"
+            width="100%"
           >
-            <GridItem>{flower.image}</GridItem>
+            <GridItem colSpan={1}>{flower.image}</GridItem>
             <GridItem
               alignItems="flex-start"
               colSpan={2}

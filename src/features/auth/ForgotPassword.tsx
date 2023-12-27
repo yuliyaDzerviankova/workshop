@@ -1,164 +1,93 @@
+import { ArrowForwardIcon } from "@chakra-ui/icons"
 import {
   Box,
   Button,
   Flex,
   FormControl,
-  FormErrorMessage,
   FormHelperText,
   FormLabel,
+  Heading,
   Input,
   Link,
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalOverlay,
   Stack,
   Text,
+  useDisclosure,
 } from "@chakra-ui/react"
-import { Controller, useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
-
-type Values = {
-  phoneNumber: string
-  password: string
-}
 
 const ForgotPassword = () => {
   const navigate = useNavigate()
-  const {
-    control,
-    handleSubmit,
-    formState: { isSubmitting, errors },
-  } = useForm<Values>({ defaultValues: { phoneNumber: "", password: "" } })
-
-  const onSignin = async (data: Values) => {
-    console.log(data)
-
-    return Promise.resolve()
-  }
+  const { onClose, isOpen, onOpen } = useDisclosure()
 
   return (
-    <Stack bg="#FAF6F6" borderRadius="10px" maxW="50%" minW="30%">
-      <Box borderBottomColor="#C6C5C5" borderBottomWidth="1px" py="18px">
-        <Text fontSize="20px" fontWeight="bold" textAlign="center" textTransform="uppercase">
-          workshop nina
-        </Text>
-      </Box>
-      <Flex direction="column" pb="60px" pt="20px" px="50px">
-        <Text fontSize="20px" textAlign="center">
-          С возвращением!
-        </Text>
-        <Stack as="form" pt="30px" onSubmit={handleSubmit(onSignin)}>
-          {/*<Controller*/}
-          {/*  control={control}*/}
-          {/*  name="phoneNumber"*/}
-          {/*  render={({ field: { name, value, ...field }, fieldState, formState }) => (*/}
-          {/*    <FormControl*/}
-          {/*      isInvalid={fieldState.invalid}*/}
-          {/*      isReadOnly={formState.isSubmitting}*/}
-          {/*      label="Номер телефона"*/}
-          {/*      mb="20px"*/}
-          {/*      isRequired*/}
-          {/*    >*/}
-          {/*      <FormLabel color="#241111" mb="10px" mr="auto" requiredIndicator>*/}
-          {/*        Номер телефона*/}
-          {/*        /!*{fieldState.error?.message && (*!/*/}
-          {/*        <FormErrorMessage m="-4px 0 0 8px" position="relative" variant="tooltip" zIndex={1}>*/}
-          {/*          Введите номер телефона*/}
-          {/*          {errors.phoneNumber?.message}*/}
-          {/*        </FormErrorMessage>*/}
-          {/*        /!*)}*!/*/}
-          {/*      </FormLabel>*/}
-          {/*      <Input borderColor="error" placeholder="+375" value={value} {...field} width="100%" />*/}
-          {/*      <FormErrorMessage m="-4px 0 0 8px" position="relative" variant="tooltip" zIndex={1}>*/}
-          {/*        {fieldState.error?.message}*/}
-          {/*      </FormErrorMessage>*/}
-          {/*    </FormControl>*/}
-          {/*  )}*/}
-          {/*  rules={{ required: "Введите номер телефона" }}*/}
-          {/*/>*/}
-          <FormControl
-            // isInvalid={fieldState.invalid}
-            // isReadOnly={formState.isSubmitting}
-            label="Номер телефона"
-            mb="20px"
-            isRequired
-          >
-            <FormLabel color="#241111" mb="10px" mr="auto" requiredIndicator>
-              Номер телефона
-              {/*{fieldState.error?.message && (*/}
-              <FormErrorMessage m="-4px 0 0 8px" position="relative" variant="tooltip" zIndex={1}>
-                Введите номер телефона
-                {errors.phoneNumber?.message}
-              </FormErrorMessage>
-              {/*)}*/}
-            </FormLabel>
-            <Input borderColor="error" placeholder="+375" width="100%" />
-            <FormHelperText color="error">Введите номер телефона</FormHelperText>
-          </FormControl>
-          <FormControl
-            // isInvalid={fieldState.invalid}
-            // isReadOnly={formState.isSubmitting}
-            label="Пароль"
-            mb="20px"
-            isRequired
-          >
-            <FormLabel color="#241111" mb="10px" mr="auto" requiredIndicator>
-              Пароль
-              {/*{fieldState.error?.message && (*/}
-              <FormErrorMessage m="-4px 0 0 8px" position="relative" variant="tooltip" zIndex={1}>
-                Введите пароль
-                {errors.phoneNumber?.message}
-              </FormErrorMessage>
-              {/*)}*/}
-            </FormLabel>
-            <Input borderColor="error" placeholder="Введите пароль" width="100%" />
-            <FormHelperText color="error">Введите пароль</FormHelperText>
-          </FormControl>
-          {/*<Controller*/}
-          {/*  control={control}*/}
-          {/*  name="password"*/}
-          {/*  render={({ field: { name, value, ...field }, fieldState, formState }) => (*/}
-          {/*    <FormControl isInvalid={fieldState.invalid} isReadOnly={formState.isSubmitting} mb="20px" isRequired>*/}
-          {/*      <FormLabel*/}
-          {/*        alignItems="center"*/}
-          {/*        display="flex"*/}
-          {/*        justifyContent="space-between"*/}
-          {/*        mb="10px"*/}
-          {/*        requiredIndicator*/}
-          {/*      >*/}
-          {/*        <Text color="#241111">Пароль</Text>*/}
-          {/*        <Link color="#828282" textDecoration="underline">*/}
-          {/*          Забыли?*/}
-          {/*        </Link>*/}
-          {/*      </FormLabel>*/}
-          {/*      <Input placeholder="Введите пароль" {...field} value={value} width="100%" />*/}
-          {/*    </FormControl>*/}
-          {/*  )}*/}
-          {/*  rules={{ required: true }}*/}
-          {/*/>*/}
-          <Button
-            bg="#DEEC00"
-            color="#160202"
-            fontWeight="normal"
-            height="46px"
-            isDisabled={isSubmitting}
-            isLoading={isSubmitting}
-            onClick={() => navigate("/")}
-          >
-            Войти в аккаунт
-          </Button>
-          <Text color="#C6C5C5" textAlign="center">
-            или
+    <Stack alignItems="center" justifyContent="center" width="100%">
+      <Stack bg="whiteMain" borderRadius="10px" width="450px">
+        <Box borderBottomColor="grayMain" borderBottomWidth="1px" py={4}>
+          <Text fontSize="xl" fontWeight={600} textAlign="center" textTransform="uppercase">
+            workshop nina
           </Text>
-          <Link
-            color="#828282"
-            fontWeight="normal"
-            textAlign="center"
-            textDecoration="underline"
-            variant="ghost"
-            onClick={() => navigate("/register")}
-          >
-            Зарегистрироваться
-          </Link>
-        </Stack>
-      </Flex>
+        </Box>
+        <Flex direction="column" pb="60px" pt={4} px="50px">
+          <Text color="blackMain" fontSize="xl" fontWeight={500} textAlign="center">
+            Забыли пароль?
+          </Text>
+          <Stack as="form" pt={6}>
+            <FormControl my={4}>
+              <FormLabel color="blackMain" mb={2} mr="auto" requiredIndicator>
+                Введите зарегистрированный номер телефона
+              </FormLabel>
+              <Input borderColor="error" mb={3} placeholder="+375" width="100%" />
+              <FormHelperText color="gray" fontSize="sm" fontWeight={500}>
+                В течение нескольких минут на Ваш номер телефона придет сообщение c одноразовым паролем для входа,
+                который можно будет изменить в личном кабинете.
+              </FormHelperText>
+              <FormHelperText color="error" fontSize="sm" fontWeight={500} mb={3}>
+                Номер телефона не зарегистрирован
+              </FormHelperText>
+              <FormHelperText color="error" fontSize="sm" fontWeight={500}>
+                Введите номер телефона
+              </FormHelperText>
+            </FormControl>
+            <Button bg="accent" color="blackMain" fontWeight={500} height="46px" onClick={onOpen}>
+              Выслать пароль
+            </Button>
+            <Text color="grayMain" textAlign="center">
+              или
+            </Text>
+            <Link
+              color="link"
+              fontWeight={500}
+              textAlign="center"
+              textDecoration="underline"
+              variant="ghost"
+              onClick={() => navigate("/register")}
+            >
+              Зарегистрироваться
+            </Link>
+          </Stack>
+        </Flex>
+
+        <Modal isOpen={isOpen} size="xl" isCentered onClose={onClose}>
+          <ModalOverlay />
+          <ModalContent p="40px">
+            <ModalBody alignItems="center" display="flex" flexDirection="column" justifyContent="center">
+              <Heading color="blackMain" fontSize="20px" fontWeight={600} mb={5} textAlign="center">
+                Одноразовый пароль выслан!
+              </Heading>
+              <Text color="blackMain" fontWeight={500} mb={6} textAlign="center">
+                Вы можете использовать его для входа, а после изменить в личном кабинете.
+              </Text>
+              <Link color="link" onClick={() => navigate("/signin")}>
+                войти в свой аккаунт <ArrowForwardIcon />
+              </Link>
+            </ModalBody>
+          </ModalContent>
+        </Modal>
+      </Stack>
     </Stack>
   )
 }

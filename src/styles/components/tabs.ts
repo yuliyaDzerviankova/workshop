@@ -59,22 +59,27 @@ export const Tabs = {
         },
       },
     },
-    "soft-rounded": {
+    profile: {
       tab: {
-        color: "interactive.05",
-        borderColor: "transparent",
-        borderWidth: 1,
-        fontWeight: "normal",
+        width: "100%",
+        color: "blackMain",
+        background: "transparent",
+        py: 5,
+        px: 10,
+        borderBottomColor: "gray",
+        borderBottomWidth: 1,
+        whiteSpace: "nowrap",
+        fontWeight: 600,
         _focus: {
           boxShadow: "focus",
         },
         _hover: {
-          color: "active.primary.01",
+          background: "grayOpacity",
         },
         _selected: {
-          bg: "white",
-          borderWidth: 1,
-          borderColor: "active.primary.01",
+          background: "grayHalfOpacity",
+          borderBottomColor: "gray",
+          borderBottomWidth: 1,
         },
       },
     },

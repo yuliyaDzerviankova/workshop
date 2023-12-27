@@ -1,4 +1,4 @@
-import { VStack } from "@chakra-ui/react"
+import { Stack, VStack } from "@chakra-ui/react"
 import { useRoutes } from "react-router-dom"
 
 import { Catalog } from "./features/catalog/Catalog"
@@ -17,8 +17,8 @@ const App = () => {
   ])
 
   return (
-    <VStack align="center" bg="whiteMain" flex={1} justify="center" minHeight="100vh" width="100%">
-      {routes}
+    <VStack align="center" bg="grayMain" flex={1} justify="center" minHeight="100vh" width="100%">
+      <Stack width="100%">{routes}</Stack>
     </VStack>
   )
 }

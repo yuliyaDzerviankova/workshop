@@ -8,18 +8,17 @@ type Props = {
 
 const Card = ({ icon, title }: Props) => (
   <GridItem
-    _hover={{ background: "link", color: "accent", cursor: "pointer" }}
-    _notFirst={{ mb: 4 }}
+    _hover={{ background: "link", cursor: "pointer" }}
     alignItems="center"
     boxShadow="4px 4px 5px 0 rgba(0, 0, 0, 0.25)"
     display="flex"
     flexDirection="column"
-    h="170px"
+    height="150px"
     justifyContent="center"
-    w="300px"
+    px={10}
   >
     {icon}
-    <Text color="blackMain" fontSize={18} mt={3} textAlign="center">
+    <Text color="blackMain" fontSize="lg" fontWeight={600} mt={3} textAlign="center">
       {title}
     </Text>
   </GridItem>

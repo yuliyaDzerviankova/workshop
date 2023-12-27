@@ -19,12 +19,7 @@ const Header = () => {
       <Image maxW="200px" src={Logo} />
       <Flex>
         <List alignItems="center" display="flex" fontSize="md">
-          <Link
-            _hover={{
-              textDecoration: "none",
-            }}
-            onClick={() => navigate("/main")}
-          >
+          <Link color="whiteMain" textDecoration="none" onClick={() => navigate("/")}>
             <ListItem
               _hover={{
                 borderBottomWidth: "5px",
@@ -40,12 +35,7 @@ const Header = () => {
               Главная
             </ListItem>
           </Link>
-          <Link
-            _hover={{
-              textDecoration: "none",
-            }}
-            onClick={() => navigate("/catalog")}
-          >
+          <Link color="whiteMain" textDecoration="none" onClick={() => navigate("/catalog")}>
             <ListItem
               _hover={{
                 borderBottomWidth: "5px",
@@ -61,11 +51,7 @@ const Header = () => {
               Каталог
             </ListItem>
           </Link>
-          <Link
-            _hover={{
-              textDecoration: "none",
-            }}
-          >
+          <Link color="whiteMain" textDecoration="none">
             <ListItem
               _hover={{
                 borderBottomWidth: "5px",
@@ -81,11 +67,7 @@ const Header = () => {
               Новинки
             </ListItem>
           </Link>
-          <Link
-            _hover={{
-              textDecoration: "none",
-            }}
-          >
+          <Link color="whiteMain" textDecoration="none">
             <ListItem
               _hover={{
                 borderBottomWidth: "5px",
@@ -101,11 +83,7 @@ const Header = () => {
               Акции
             </ListItem>
           </Link>
-          <Link
-            _hover={{
-              textDecoration: "none",
-            }}
-          >
+          <Link color="whiteMain" textDecoration="none">
             <ListItem
               _hover={{
                 borderBottomWidth: "5px",
@@ -121,11 +99,7 @@ const Header = () => {
               В подарок
             </ListItem>
           </Link>
-          <Link
-            _hover={{
-              textDecoration: "none",
-            }}
-          >
+          <Link color="whiteMain" textDecoration="none">
             <ListItem
               _hover={{
                 borderBottomWidth: "5px",
@@ -144,14 +118,14 @@ const Header = () => {
         </List>
       </Flex>
       <Flex>
-        <Button variant="ghost">
-          <SearchIcon />
+        <Button _hover={{ background: "grayOpacity" }} variant="ghost">
+          <SearchIcon height="25px" width="25px" />
         </Button>
-        <Button variant="ghost" onClick={() => navigate("/profile")}>
-          <UserIcon />
+        <Button _hover={{ background: "grayOpacity" }} variant="ghost" onClick={() => navigate("/profile")}>
+          <UserIcon height="25px" width="25px" />
         </Button>
-        <Button variant="ghost" onClick={() => navigate("/cart")}>
-          <CartIcon />
+        <Button _hover={{ background: "grayOpacity" }} variant="ghost" onClick={() => navigate("/cart")}>
+          <CartIcon height="25px" width="25px" />
         </Button>
       </Flex>
     </Flex>

@@ -1,4 +1,4 @@
-import { Button, FormControl, FormLabel, Grid, GridItem, Heading, Input, Stack } from "@chakra-ui/react"
+import { Button, FormControl, FormHelperText, FormLabel, Grid, GridItem, Heading, Input, Stack } from "@chakra-ui/react"
 
 const PersonalInfo = () => (
   <Stack width="100%">
@@ -6,11 +6,11 @@ const PersonalInfo = () => (
       Персональные данные
     </Heading>
     <Grid as="form" display="grid" gap={6} templateColumns="repeat(2, 1fr)" templateRows="repeat(2, 1fr)" width="100%">
-      <FormControl flex={1} width="100%">
+      <FormControl isRequired>
         <FormLabel>Имя</FormLabel>
-        <Input flex={1} placeholder="Введите имя" width="100%" />
+        <Input placeholder="Введите имя" />
       </FormControl>
-      <FormControl flex={1}>
+      <FormControl isRequired>
         <FormLabel>Фамиилия</FormLabel>
         <Input placeholder="Введите фамилию" />
       </FormControl>
@@ -18,7 +18,7 @@ const PersonalInfo = () => (
         <FormLabel>Отчество</FormLabel>
         <Input placeholder="Введите отчество (если таковое имеется)" />
       </FormControl>
-      <FormControl>
+      <FormControl isRequired>
         <FormLabel>Номер телефона</FormLabel>
         <Input placeholder="Введите номер мобильного телефона" />
       </FormControl>
@@ -30,45 +30,30 @@ const PersonalInfo = () => (
       </GridItem>
     </Grid>
 
-    <Stack background="rgba(198, 197, 197, 0.2)" mt={5} p={4} width="50%">
+    <Stack background="grayOpacity" mt={5} p={4} width="50%">
       <Heading fontSize={18} fontWeight={600} mb={5}>
         Смена пароля
       </Heading>
-      <FormControl flex={1} width="100%">
+      <FormControl isRequired>
         <FormLabel>Введите старый пароль</FormLabel>
-        <Input
-          background="whiteMain"
-          borderColor="link"
-          borderRadius={0}
-          borderWidth={1}
-          flex={1}
-          placeholder="Введите старый пароль"
-          width="100%"
-        />
+        <Input placeholder="Введите старый пароль" />
+        <FormHelperText color="error" fontSize="sm" fontWeight={500}>
+          Пароль введен неверно
+        </FormHelperText>
       </FormControl>
-      <FormControl flex={1} mt={4} width="100%">
+      <FormControl mt={4} isRequired>
         <FormLabel>Введите новый пароль</FormLabel>
-        <Input
-          background="whiteMain"
-          borderColor="link"
-          borderRadius={0}
-          borderWidth={1}
-          flex={1}
-          placeholder="Введите новый пароль"
-          width="100%"
-        />
+        <Input placeholder="Введите новый пароль" />
+        <FormHelperText color="error" fontSize="sm" fontWeight={500}>
+          Пароль введен неверно
+        </FormHelperText>
       </FormControl>
-      <FormControl flex={1} mt={4} width="100%">
+      <FormControl mt={4} isRequired>
         <FormLabel>Повторите новый пароль</FormLabel>
-        <Input
-          background="whiteMain"
-          borderColor="link"
-          borderRadius={0}
-          borderWidth={1}
-          flex={1}
-          placeholder="Повторите новый пароль"
-          width="100%"
-        />
+        <Input placeholder="Повторите новый пароль" />
+        <FormHelperText color="error" fontSize="sm" fontWeight={500}>
+          Пароль введен неверно
+        </FormHelperText>
       </FormControl>
     </Stack>
     <Button alignSelf="self-end" background="accent" borderRadius={0} fontWeight={400}>

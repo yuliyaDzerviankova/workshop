@@ -1,4 +1,6 @@
-import { Box, HStack, Heading, Link, List, ListItem, Text } from "@chakra-ui/react"
+import { Box, Flex, HStack, Heading, Link, List, ListItem, Text } from "@chakra-ui/react"
+
+import { InstagramIcon, TelegramIcon } from "../../assets"
 
 const Footer = () => (
   <HStack
@@ -18,6 +20,10 @@ const Footer = () => (
       <Text mb={2}>г. Гомель, ул. Советская 23</Text>
       <Text mb={2}>+375(29)555-55-55</Text>
       <Text>gospodipomogi@gmail.com</Text>
+      <Flex align="center" mt={3}>
+        <InstagramIcon height="30px" mr={4} width="30px" />
+        <TelegramIcon height="30px" width="30px" />
+      </Flex>
     </Box>
     <Box>
       <Heading color="accent" fontSize="22px" fontWeight={500} mb="10px">

@@ -17,10 +17,14 @@ import {
 const Delivery = () => (
   <Stack width="100%">
     <Flex align="center">
-      <Heading fontSize={18} fontWeight={600} mr={5}>
+      <Heading fontSize="lg" fontWeight={600} mr={5}>
         Адреса для доставки
       </Heading>
-      <Checkbox>Сделать адресом по умолчанию</Checkbox>
+      <Checkbox size="lg">
+        <Text color="blackMain" fontSize="sm" fontStyle="italic" fontWeight={400}>
+          Сделать адресом по умолчанию
+        </Text>
+      </Checkbox>
     </Flex>
 
     <Grid
@@ -33,8 +37,8 @@ const Delivery = () => (
       width="100%"
     >
       <GridItem colSpan={3}>
-        <FormControl flex={1} width="100%">
-          <Input placeholder="Город, улицца, дом" width="100%" />
+        <FormControl>
+          <Input placeholder="Город, улица, дом" />
         </FormControl>
       </GridItem>
       <GridItem>
@@ -53,8 +57,11 @@ const Delivery = () => (
         </FormControl>
       </GridItem>
     </Grid>
+    <Text color="error" fontSize="sm" fontWeight={500}>
+      Данные введены некорректно
+    </Text>
 
-    <Link alignItems="center" color="link" display="flex" my={4}>
+    <Link alignItems="center" display="flex" my={4}>
       <AddIcon mr={3} />
       <Text>Добавить ещё один адрес</Text>
     </Link>
@@ -69,8 +76,8 @@ const Delivery = () => (
       width="100%"
     >
       <GridItem colSpan={3}>
-        <FormControl flex={1} width="100%">
-          <Input placeholder="Город, улицца, дом" width="100%" />
+        <FormControl>
+          <Input placeholder="Город, улица, дом" />
         </FormControl>
       </GridItem>
       <GridItem>
@@ -90,25 +97,28 @@ const Delivery = () => (
       </GridItem>
     </Grid>
 
-    <Stack background="rgba(198, 197, 197, 0.2)" mt={5} p={4} width="60%">
-      <Flex align="center" mb={5}>
+    <Stack background="grayOpacity" mt={5} p={4} width="60%">
+      <Flex align="center" mb={4}>
         <Heading fontSize={18} fontWeight={600} mr={5}>
           Карта для оплаты
         </Heading>
-        <Checkbox>Сделать картой по умолчанию</Checkbox>
+        <Checkbox size="lg">
+          <Text color="blackMain" fontSize="sm" fontStyle="italic" fontWeight={400}>
+            Сделать картой по умолчанию
+          </Text>
+        </Checkbox>
       </Flex>
 
       <Grid
         as="form"
         display="grid"
         gap={6}
-        mt={4}
         templateColumns="repeat(3, 1fr)"
         templateRows="repeat(3, 1fr)"
         width="100%"
       >
         <GridItem colSpan={3}>
-          <FormControl>
+          <FormControl isRequired>
             <FormLabel>Номер карты</FormLabel>
             <Input
               background="whiteMain"
