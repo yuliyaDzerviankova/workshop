@@ -7,6 +7,10 @@ export const baseStyle = {
   field: {
     bg: "whiteMain",
     borderColor: "link",
+    _placeholder: {
+      color: "gray",
+      fontSize: "sm",
+    },
   },
 }
 
@@ -17,7 +21,8 @@ export const Input = {
         ...baseStyle.field,
         borderRadius: 0,
         _placeholder: {
-          color: "text.03",
+          fontWeight: 400,
+          color: "gray",
           fontSize: "sm",
         },
       },

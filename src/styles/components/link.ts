@@ -31,7 +31,7 @@ const variants = {
     color: "blackMain",
   },
   primary: {
-    textDecoration: "none",
+    textDecoration: "underline",
   },
   secondary: {
     textDecoration: "underline",

@@ -12,7 +12,7 @@ const Footer = () => (
     width="100%"
   >
     <Box>
-      <Heading color="accent" fontSize="22px" fontWeight={600} mb="10px" textTransform="uppercase">
+      <Heading color="accent" fontSize="22px" fontWeight={500} mb="10px" textTransform="uppercase">
         workshop nina
       </Heading>
       <Text mb={2}>г. Гомель, ул. Советская 23</Text>
@@ -20,7 +20,7 @@ const Footer = () => (
       <Text>gospodipomogi@gmail.com</Text>
     </Box>
     <Box>
-      <Heading color="accent" fontSize="22px" fontWeight={600} mb="10px">
+      <Heading color="accent" fontSize="22px" fontWeight={500} mb="10px">
         Навигация
       </Heading>
       <List>
@@ -39,7 +39,7 @@ const Footer = () => (
       </List>
     </Box>
     <Box>
-      <Heading color="accent" fontSize="22px" fontWeight={600} mb="10px">
+      <Heading color="accent" fontSize="22px" fontWeight={500} mb="10px">
         Каталог
       </Heading>
       <List>
@@ -58,34 +58,34 @@ const Footer = () => (
       </List>
     </Box>
     <Box>
-      <Heading color="accent" fontSize="22px" fontWeight={600} mb="10px">
+      <Heading color="accent" fontSize="22px" fontWeight={500} mb="10px">
         Частые вопросы
       </Heading>
       <List>
         <Link variant="footermenu">
-          <ListItem>Как какать?</ListItem>
+          <ListItem>О нас</ListItem>
         </Link>
         <Link variant="footermenu">
-          <ListItem>2+2=?</ListItem>
+          <ListItem>О доставке</ListItem>
         </Link>
         <Link variant="footermenu">
-          <ListItem>Теорема Пифагора</ListItem>
+          <ListItem>Как оплатить?</ListItem>
         </Link>
         <Link variant="footermenu">
-          <ListItem>Какой камбэк у ВР?</ListItem>
+          <ListItem>Где находится магазин?</ListItem>
         </Link>
       </List>
     </Box>
     <Box maxW="450px">
-      <Heading color="accent" fontSize="22px" fontWeight={600} mb="10px">
+      <Heading color="accent" fontSize="22px" fontWeight={500} mb={2} textAlign="center">
         Время работы магазина:
       </Heading>
-      <Text>Каждый день с 11:00 до 19:00</Text>
-      <Heading color="accent" fontSize="22px" fontWeight={600} mb="10px" mt={4}>
+      <Text textAlign="center">Ежедневно с 11:00 до 19:00</Text>
+      <Heading color="accent" fontSize="22px" fontWeight={500} mb={2} mt={4} textAlign="center">
         Время принятия заказов online:
       </Heading>
-      <Text>Каждый день с 11:00 до 19:00</Text>
-      <Box>
+      <Text textAlign="center">Ежедневно с 11:00 до 19:00</Text>
+      <Box mt={4}>
         <Text>
           © Веб-приложение интернет-магазина workshop nina ООО «ыавыва» УНП 26576970 Адрес: 357970, Республика
           Беларусь, Гомель, проспект ва9кшлвзпа, д. 2
