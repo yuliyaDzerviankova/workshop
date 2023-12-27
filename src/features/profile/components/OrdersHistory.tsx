@@ -43,13 +43,13 @@ const OrdersHistory = () => {
       <Heading fontSize={18} fontWeight={600}>
         История заказов
       </Heading>
-      <Flex justify="space-between" mt={4} width="50%">
-        <Text color="error">История заказов пуста.</Text>
-        <Link color="link">
-          Перейти в каталог
-          <ArrowForwardIcon ml={2} />
-        </Link>
-      </Flex>
+      {/*<Flex justify="space-between" mt={4} width="50%">*/}
+      {/*  <Text color="error">История заказов пуста.</Text>*/}
+      {/*  <Link color="link">*/}
+      {/*    Перейти в каталог*/}
+      {/*    <ArrowForwardIcon ml={2} />*/}
+      {/*  </Link>*/}
+      {/*</Flex>*/}
       <TableContainer>
         <Table variant="simple">
           <Thead>

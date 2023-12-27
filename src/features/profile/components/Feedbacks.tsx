@@ -35,13 +35,13 @@ const Feedbacks = () => {
       <Heading fontSize={18} fontWeight={600}>
         Ваши отзывы
       </Heading>
-      <Flex justify="space-between" mt={4} width="50%">
-        <Text color="error">Отзывов нет.</Text>
-        <Link color="link">
-          Перейти в каталог
-          <ArrowForwardIcon ml={2} />
-        </Link>
-      </Flex>
+      {/*<Flex justify="space-between" mt={4} width="50%">*/}
+      {/*  <Text color="error">Отзывов нет.</Text>*/}
+      {/*  <Link color="link">*/}
+      {/*    Перейти в каталог*/}
+      {/*    <ArrowForwardIcon ml={2} />*/}
+      {/*  </Link>*/}
+      {/*</Flex>*/}
       <VStack>
         {feedbacks.map((feedback) => (
           <Box key={feedback.id} background="skin" p={3} width="100%">

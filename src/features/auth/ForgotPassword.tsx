@@ -40,17 +40,17 @@ const ForgotPassword = () => {
               <FormLabel color="blackMain" mb={2} mr="auto" requiredIndicator>
                 Введите зарегистрированный номер телефона
               </FormLabel>
-              <Input borderColor="error" mb={3} placeholder="+375" width="100%" />
+              <Input mb={3} placeholder="+375" width="100%" />
               <FormHelperText color="gray" fontSize="sm" fontWeight={500}>
                 В течение нескольких минут на Ваш номер телефона придет сообщение c одноразовым паролем для входа,
                 который можно будет изменить в личном кабинете.
               </FormHelperText>
-              <FormHelperText color="error" fontSize="sm" fontWeight={500} mb={3}>
-                Номер телефона не зарегистрирован
-              </FormHelperText>
-              <FormHelperText color="error" fontSize="sm" fontWeight={500}>
-                Введите номер телефона
-              </FormHelperText>
+              {/*<FormHelperText color="error" fontSize="sm" fontWeight={500} mb={3}>*/}
+              {/*  Номер телефона не зарегистрирован*/}
+              {/*</FormHelperText>*/}
+              {/*<FormHelperText color="error" fontSize="sm" fontWeight={500}>*/}
+              {/*  Введите номер телефона*/}
+              {/*</FormHelperText>*/}
             </FormControl>
             <Button bg="accent" color="blackMain" fontWeight={500} height="46px" onClick={onOpen}>
               Выслать пароль
