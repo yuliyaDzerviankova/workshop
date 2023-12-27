@@ -4,9 +4,10 @@ import { ReactElement } from "react"
 type Props = {
   icon: ReactElement
   title: string
+  onClick: () => void
 }
 
-const Card = ({ icon, title }: Props) => (
+const Card = ({ icon, title, onClick }: Props) => (
   <GridItem
     _hover={{ background: "link", cursor: "pointer" }}
     alignItems="center"
@@ -16,6 +17,7 @@ const Card = ({ icon, title }: Props) => (
     height="150px"
     justifyContent="center"
     px={10}
+    onClick={onClick}
   >
     {icon}
     <Text color="blackMain" fontSize="lg" fontWeight={600} mt={3} textAlign="center">

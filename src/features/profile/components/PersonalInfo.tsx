@@ -1,4 +1,4 @@
-import { Button, FormControl, FormHelperText, FormLabel, Grid, GridItem, Heading, Input, Stack } from "@chakra-ui/react"
+import { Button, FormControl, FormLabel, Grid, GridItem, Heading, Input, Stack } from "@chakra-ui/react"
 
 const PersonalInfo = () => (
   <Stack width="100%">

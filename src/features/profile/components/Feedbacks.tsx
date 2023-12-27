@@ -1,5 +1,7 @@
-import { ArrowForwardIcon, StarIcon } from "@chakra-ui/icons"
+import { ArrowForwardIcon } from "@chakra-ui/icons"
 import { Box, Flex, Heading, Link, Stack, Text, VStack } from "@chakra-ui/react"
+
+import { FilledStarsIcon } from "../../../assets"
 
 type Feedback = {
   id: string
@@ -42,13 +44,13 @@ const Feedbacks = () => {
       {/*    <ArrowForwardIcon ml={2} />*/}
       {/*  </Link>*/}
       {/*</Flex>*/}
-      <VStack>
+      <VStack mt={4}>
         {feedbacks.map((feedback) => (
           <Box key={feedback.id} background="skin" p={3} width="100%">
             <Flex align="flex-start" justify="space-between">
               <Box>
                 {Array.from({ length: feedback.stars }, () => (
-                  <StarIcon key={feedback.id} _notFirst={{ ml: 2 }} color="#6D3293" />
+                  <FilledStarsIcon key={feedback.id} _notFirst={{ ml: 2 }} />
                 ))}
                 <Text fontSize="14px" mt={2}>
                   {feedback.date}
