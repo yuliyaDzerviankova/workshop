@@ -17,7 +17,6 @@ import { ReactElement } from "react"
 import { useNavigate } from "react-router-dom"
 
 import { One, Three } from "assets"
-import { Footer, Header } from "components"
 
 type Flower = {
   id: string
@@ -51,7 +50,6 @@ const Cart = () => {
 
   return (
     <Box background="whiteMain" width="100%">
-      <Header />
       <VStack alignItems="flex-start" px="100px" py="40px">
         <Flex>
           <Link textDecoration="underline" onClick={() => navigate("/main")}>
@@ -152,7 +150,6 @@ const Cart = () => {
           </Stack>
         </VStack>
       </VStack>
-      <Footer />
     </Box>
   )
 }

@@ -1,13 +1,12 @@
-import { GridItem, Text } from "@chakra-ui/react"
-import { ReactElement } from "react"
+import { ComponentWithAs, GridItem, IconProps, Text } from "@chakra-ui/react"
 
 type Props = {
-  icon: ReactElement
+  Icon: ComponentWithAs<"svg", IconProps>
   title: string
   onClick: () => void
 }
 
-const Card = ({ icon, title, onClick }: Props) => (
+const Card = ({ Icon, title, onClick }: Props) => (
   <GridItem
     _hover={{ background: "link", cursor: "pointer" }}
     alignItems="center"
@@ -19,7 +18,7 @@ const Card = ({ icon, title, onClick }: Props) => (
     px={10}
     onClick={onClick}
   >
-    {icon}
+    <Icon height="30px" width="30px" />
     <Text color="blackMain" fontSize="lg" fontWeight={600} mt={3} textAlign="center">
       {title}
     </Text>

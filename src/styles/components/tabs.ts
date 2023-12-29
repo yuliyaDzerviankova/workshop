@@ -83,6 +83,30 @@ export const Tabs = {
         },
       },
     },
+    appmenu: {
+      tab: {
+        fontSize: "md",
+        fontWeight: 500,
+      },
+    },
+    personal: {
+      tab: {
+        fontSize: "lg",
+        fontWeight: 500,
+        borderBottomWidth: 2,
+        borderBottomColor: "transparent",
+        _hover: {
+          background: "grayOpacity",
+        },
+        _active: {
+          borderBottomColor: "accent",
+        },
+        _selected: {
+          borderBottomWidth: 2,
+          borderBottomColor: "accent",
+        },
+      },
+    },
   },
   defaultProps: {
     variant: "line",

@@ -7,6 +7,12 @@ export const Button = {
     primary: {
       bg: "accent",
       color: "blackMain",
+      _hover: {
+        background: "grayOpacity",
+      },
+      _active: {
+        background: "grayHalfOpacity",
+      },
     },
   },
   defaultProps: {

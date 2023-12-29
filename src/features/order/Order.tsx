@@ -27,7 +27,6 @@ import { ReactElement } from "react"
 import { useNavigate } from "react-router-dom"
 
 import { One, SuccessIcon, Three } from "assets"
-import { Footer, Header } from "components"
 
 type OrderDetails = {
   id: string
@@ -56,7 +55,6 @@ const Order = () => {
 
   return (
     <VStack alignItems="flex-start" justifyItems="flex-start" width="100%" background="whiteMain">
-      <Header />
       <VStack alignItems="flex-start" px="100px" py="40px" width="100%">
         <Flex>
           <Link>Главная</Link>
@@ -255,8 +253,6 @@ const Order = () => {
           </Box>
         </VStack>
       </VStack>
-
-      <Footer />
 
       <Modal isOpen={isOpen} size="md" isCentered onClose={onClose}>
         <ModalOverlay />

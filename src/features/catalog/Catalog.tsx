@@ -40,49 +40,56 @@ import {
   Three,
   Two,
 } from "../../assets"
-import { Footer, Header } from "components"
 
 const Catalog = () => {
   const navigate = useNavigate()
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [showFeed, setShowFeed] = useState(false)
+  const [counter, setCounter] = useState(1)
 
   const handleShowFeed = () => setShowFeed(!showFeed)
 
+  const onCounterUp = () => setCounter(counter + 1)
+
+  const onCounterDown = () => {
+    setCounter((prevState) => {
+      if (prevState > 1) {
+        return prevState - 1
+      }
+
+      return prevState
+    })
+  }
+
   return (
     <Box background="whiteMain">
-      <Header />
       <VStack alignItems="flex-start" gap="20px" pb="100px" pt="40px" px="100px">
         <Link>Главная</Link>
         <Heading>Каталог</Heading>
         <Flex justify="space-between" width="100%">
           <HStack gap={5}>
-            <Button background="#A682BD" borderRadius={0}>
-              Все
-            </Button>
-            <Button background="#DEEC00" borderRadius={0}>
-              Цветы
-            </Button>
-            <Button background="#F2C0AC" borderRadius={0}>
-              Уход за телом
-            </Button>
-            <Button background="#DF9959" borderRadius={0}>
-              Свечи и диффузоры
-            </Button>
-            <Button background="#F4E275" borderRadius={0}>
-              Для дома и красоты
-            </Button>
-            <Button background="#9DBFE8" borderRadius={0}>
-              Боксы
-            </Button>
+            <Button background="#A682BD">Все</Button>
+            <Button background="#DEEC00">Цветы</Button>
+            <Button background="#F2C0AC">Уход за телом</Button>
+            <Button background="#DF9959">Свечи и диффузоры</Button>
+            <Button background="#F4E275">Для дома и красоты</Button>
+            <Button background="#9DBFE8">Боксы</Button>
           </HStack>
-          <Button alignItems="center" display="flex" fontWeight="400" variant="ghost">
+          <Button alignItems="center" display="flex" variant="ghost">
             Фильтры
             <FilterIcon ml={2} />
           </Button>
         </Flex>
         <Grid gap={5} templateColumns="repeat(4, 2fr)">
-          <GridItem onClick={onOpen}>
+          <GridItem
+            _hover={{
+              width: "100%",
+              height: "100%",
+              content: '""',
+              background: "rgba(0, 0, 0, 0.5)",
+            }}
+            onClick={onOpen}
+          >
             <Image src={One} />
           </GridItem>
           <GridItem onClick={onOpen}>
@@ -134,11 +141,13 @@ const Catalog = () => {
                   </Heading>
 
                   <Flex align="center" mb="20px" mt="80px">
-                    <Button background="grayMain" borderRadius={0} fontSize="3xl">
+                    <Button background="grayMain" borderRadius={0} fontSize="3xl" onClick={onCounterUp}>
                       +
                     </Button>
-                    <Text mx={3}>1</Text>
-                    <Button background="grayMain" borderRadius={0} fontSize="3xl">
+                    <Text mx={2} textAlign="center" width="30px">
+                      {counter}
+                    </Text>
+                    <Button background="grayMain" borderRadius={0} fontSize="3xl" onClick={onCounterDown}>
                       -
                     </Button>
                     <Text fontSize="2xl" ml="20px">
@@ -243,8 +252,6 @@ const Catalog = () => {
           </ModalContent>
         </Modal>
       </VStack>
-
-      <Footer />
     </Box>
   )
 }

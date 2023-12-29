@@ -13,29 +13,24 @@ import {
   PhoneIcon,
   Rectangle,
 } from "../../assets"
-import { Footer, Header } from "components"
 
 const Main = () => (
   <Stack alignItems="flex-start" background="whiteMain" flex={1} width="100%">
-    <Header />
-    <Flex align="center" justify="space-between" px="100px" py="34px" width="100%">
-      <Text color="#A77E50" fontSize="18px">
-        Досталяем прекрасное по Гомелю и Беларуси!
-      </Text>
+    <Flex align="center" justify="space-between" px="100px" py={6} width="100%">
+      <Text color="brown">Доставляем прекрасное по Гомелю и Беларуси!</Text>
       <Flex align="center">
-        <PhoneIcon height="30px" mr={1} width="30px" />
-        <Text color="#A77E50" fontSize="18px">
-          +375293195299
-        </Text>
+        <PhoneIcon height="25px" mr={1} width="25px" />
+        <Text color="brown">+375293195299</Text>
       </Flex>
     </Flex>
 
-    <VStack fontSize="40px" gap={0} w="100%">
+    <VStack fontSize="4xl" gap={0} w="100%">
       <Flex flex={1} w="100%">
         <Box flex={1} pos="relative">
           <ChevronLeftIcon
             _hover={{
               transform: "scale(1.2)",
+              cursor: "pointer",
             }}
             color="whiteMain"
             left={0}
@@ -46,6 +41,7 @@ const Main = () => (
           <ChevronRightIcon
             _hover={{
               transform: "scale(1.2)",
+              cursor: "pointer",
             }}
             color="whiteMain"
             pos="absolute"
@@ -54,14 +50,14 @@ const Main = () => (
           />
         </Box>
         <Flex align="center" bgColor="grayMain" flex={1} justify="center">
-          <Text color="#FFF" textAlign="center">
+          <Text color="white" fontWeight={500} textAlign="center">
             Цветы
           </Text>
         </Flex>
       </Flex>
       <Flex flex={1} w="100%">
         <Flex align="center" bgColor="grayMain" flex={1} justify="center">
-          <Text color="#FFF" textAlign="center">
+          <Text color="white" fontWeight={500} textAlign="center">
             Уход за телом
           </Text>
         </Flex>
@@ -74,14 +70,14 @@ const Main = () => (
           <Image src={CandleIcon} />
         </Box>
         <Flex align="center" bgColor="grayMain" flex={1} justify="center">
-          <Text color="#FFF" textAlign="center">
+          <Text color="white" fontWeight={500} textAlign="center">
             Свечи и диффузоры
           </Text>
         </Flex>
       </Flex>
       <Flex flex={1} w="100%">
         <Flex align="center" bgColor="grayMain" flex={1} justify="center">
-          <Text color="#FFF" textAlign="center">
+          <Text color="white" fontWeight={500} textAlign="center">
             Для дома и красоты
           </Text>
         </Flex>
@@ -94,7 +90,7 @@ const Main = () => (
           <Image src={BoxesIcon} />
         </Box>
         <Flex align="center" bgColor="grayMain" flex={1} justify="center">
-          <Text color="#FFF" textAlign="center">
+          <Text color="white" fontWeight={500} textAlign="center">
             Боксы в подарок
           </Text>
         </Flex>
@@ -236,8 +232,6 @@ const Main = () => (
       <Text>D. Engel</Text>
       <Text>ВРЕМЕ-НАМИ</Text>
     </Stack>
-
-    <Footer />
   </Stack>
 )
 

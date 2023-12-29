@@ -3,7 +3,7 @@ import React from "react"
 
 const RequiredIndicator = () => (
   <>
-    <ChakraRequiredIndicator color="error.01" marginInlineStart={1} />
+    <ChakraRequiredIndicator color="error" marginInlineStart={1} />
     <VisuallyHidden>(required field)</VisuallyHidden>
   </>
 )

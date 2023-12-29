@@ -1,7 +1,7 @@
 import { Stack, VStack } from "@chakra-ui/react"
 import { useLocation, useRoutes } from "react-router-dom"
 
-import { Header } from "./components"
+import { Footer, Header } from "./components"
 import { Catalog } from "./features/catalog/Catalog"
 import { Cart, ForgotPassword, Main, Order, Profile, RegisterPage, SignInPage } from "features"
 
@@ -20,15 +20,14 @@ const App = () => {
   ])
 
   return (
-    <VStack align="center" bg="grayMain" flex={1} justify="center" minHeight="100vh" width="100%">
-      {
-        !(
-          location.pathname.includes("/register") ||
-          location.pathname.includes("/signin") ||
-          (location.pathname.includes("/forgotPassword") && <Header />)
-        )
-      }
+    <VStack align="center" bg="grayMain" flex={1} gap={0} justify="center" minHeight="100vh" width="100%">
+      {location.pathname !== "/signin" &&
+        location.pathname !== "/register" &&
+        location.pathname !== "/forgotPassword" && <Header />}
       <Stack width="100%">{routes}</Stack>
+      {location.pathname !== "/signin" &&
+        location.pathname !== "/register" &&
+        location.pathname !== "/forgotPassword" && <Footer />}
     </VStack>
   )
 }

@@ -1,6 +1,7 @@
 export const colors = {
   blackMain: "#160202",
   blackOpacity: "rgba(22, 2, 2, 0.5)",
+  brown: "#AF814D",
   white: "#ffffff",
   whiteMain: "#FAF6F6",
   grayMain: "#C6C5C5",
