@@ -1,4 +1,4 @@
-import { AddIcon } from "@chakra-ui/icons"
+import { AddIcon, ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons"
 import {
   Box,
   Button,
@@ -8,12 +8,21 @@ import {
   HStack,
   Heading,
   Image,
+  Input,
+  InputGroup,
+  InputLeftAddon,
   Link,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
   Modal,
   ModalBody,
   ModalCloseButton,
   ModalContent,
   ModalOverlay,
+  Radio,
+  RadioGroup,
   Tab,
   TabList,
   TabPanel,
@@ -47,6 +56,13 @@ const Catalog = () => {
   const [showFeed, setShowFeed] = useState(false)
   const [counter, setCounter] = useState(1)
 
+  const filterOptions = [
+    { name: "Новинки", value: "new" },
+    { name: "Акции", value: "promotions" },
+    { name: "В наличии", value: "inStock" },
+    { name: "Популярное", value: "popular" },
+  ]
+
   const handleShowFeed = () => setShowFeed(!showFeed)
 
   const onCounterUp = () => setCounter(counter + 1)
@@ -70,28 +86,204 @@ const Catalog = () => {
           <HStack gap={5}>
             <Button background="#A682BD">Все</Button>
             <Button background="#DEEC00">Цветы</Button>
-            <Button background="#F2C0AC">Уход за телом</Button>
-            <Button background="#DF9959">Свечи и диффузоры</Button>
-            <Button background="#F4E275">Для дома и красоты</Button>
+            <Menu>
+              {({ isOpen }) => (
+                <>
+                  <MenuButton
+                    _expanded={{
+                      textColor: "white",
+                      background: "skin",
+                    }}
+                    _hover={{
+                      textColor: "white",
+                      background: "skin",
+                    }}
+                    as={Button}
+                    background="skin"
+                    px={8}
+                    rightIcon={isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
+                  >
+                    Уход за телом
+                  </MenuButton>
+                  <MenuList borderColor="grayMain" borderRadius={0} p={0}>
+                    <MenuItem borderBottomColor="grayMain" borderBottomWidth={1} justifyContent="center" py={2.5}>
+                      Для кожи и лица
+                    </MenuItem>
+                    <MenuItem borderBottomColor="grayMain" borderBottomWidth={1} justifyContent="center" py={2.5}>
+                      Для волос
+                    </MenuItem>
+                    <MenuItem borderBottomColor="grayMain" borderBottomWidth={1} justifyContent="center" py={2.5}>
+                      Для тела
+                    </MenuItem>
+                    <MenuItem justifyContent="center" py={2.5}>
+                      Другое
+                    </MenuItem>
+                  </MenuList>
+                </>
+              )}
+            </Menu>
+
+            <Menu>
+              {({ isOpen }) => (
+                <>
+                  <MenuButton
+                    _expanded={{
+                      textColor: "white",
+                      background: "#DF9959",
+                    }}
+                    _hover={{
+                      textColor: "white",
+                      background: "#DF9959",
+                    }}
+                    as={Button}
+                    background="#DF9959"
+                    px={6}
+                    rightIcon={isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
+                  >
+                    Свечи и диффузоры
+                  </MenuButton>
+                  <MenuList borderColor="grayMain" borderRadius={0} py={0}>
+                    <MenuItem borderBottomColor="grayMain" borderBottomWidth={1} justifyContent="center" py={2.5}>
+                      Свечи ароматические
+                    </MenuItem>
+                    <MenuItem borderBottomColor="grayMain" borderBottomWidth={1} justifyContent="center" py={2.5}>
+                      Свечи декоративные
+                    </MenuItem>
+                    <MenuItem borderBottomColor="grayMain" borderBottomWidth={1} justifyContent="center" py={2.5}>
+                      Диффузоры
+                    </MenuItem>
+                    <MenuItem borderBottomColor="grayMain" borderBottomWidth={1} justifyContent="center" py={2.5}>
+                      Благовония
+                    </MenuItem>
+                    <MenuItem justifyContent="center" py={2.5}>
+                      Другое
+                    </MenuItem>
+                  </MenuList>
+                </>
+              )}
+            </Menu>
+
+            <Menu>
+              {({ isOpen }) => (
+                <>
+                  <MenuButton
+                    _expanded={{
+                      textColor: "white",
+                      background: "#F4E275",
+                    }}
+                    _hover={{
+                      textColor: "white",
+                      background: "#F4E275",
+                    }}
+                    as={Button}
+                    background="#F4E275"
+                    px={6}
+                    rightIcon={isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
+                  >
+                    Для дома и красоты
+                  </MenuButton>
+                  <MenuList borderColor="grayMain" borderRadius={0} py={0}>
+                    <MenuItem borderBottomColor="grayMain" borderBottomWidth={1} justifyContent="center" py={2.5}>
+                      Одежда и аксессуары
+                    </MenuItem>
+                    <MenuItem borderBottomColor="grayMain" borderBottomWidth={1} justifyContent="center" py={2.5}>
+                      Посуда
+                    </MenuItem>
+                    <MenuItem borderBottomColor="grayMain" borderBottomWidth={1} justifyContent="center" py={2.5}>
+                      Игрушки
+                    </MenuItem>
+                    <MenuItem borderBottomColor="grayMain" borderBottomWidth={1} justifyContent="center" py={2.5}>
+                      Декор
+                    </MenuItem>
+                    <MenuItem justifyContent="center" py={2.5}>
+                      Другое
+                    </MenuItem>
+                  </MenuList>
+                </>
+              )}
+            </Menu>
+
             <Button background="#9DBFE8">Боксы</Button>
           </HStack>
-          <Button alignItems="center" display="flex" variant="ghost">
-            Фильтры
-            <FilterIcon ml={2} />
-          </Button>
+
+          <Menu closeOnSelect={false}>
+            <MenuButton
+              _expanded={{
+                color: "white",
+                background: "gray",
+                borderBottomWidth: "3px",
+                borderBottomColor: "accent",
+              }}
+              _hover={{
+                borderBottomWidth: "3px",
+                borderBottomColor: "accent",
+              }}
+              as={Button}
+              background="transparent"
+              borderBottomColor="transparent"
+              borderBottomWidth="3px"
+              px={6}
+              rightIcon={<FilterIcon _hover={{ fill: "white" }} />}
+            >
+              Фильтры
+            </MenuButton>
+            <MenuList background="grayMain" borderColor="grayMain" borderRadius={0} px={4}>
+              <Box>
+                <Flex direction="column" mb={3}>
+                  <Text mb={2}>Цена, р.</Text>
+                  <Flex>
+                    <InputGroup>
+                      <InputLeftAddon background="whiteMain" border="none" borderRadius={0} px={2}>
+                        от
+                      </InputLeftAddon>
+                      <Input
+                        _focus={{ outline: "none" }}
+                        _placeholder={{ color: "grayMain" }}
+                        border="none"
+                        pl={0.5}
+                        placeholder="35"
+                        width="100px"
+                      />
+                    </InputGroup>
+                    <InputGroup borderLeftColor="grayMain" borderLeftWidth={1}>
+                      <InputLeftAddon background="whiteMain" border="none" borderRadius={0} px={2}>
+                        до
+                      </InputLeftAddon>
+                      <Input
+                        _focus={{ outline: "none" }}
+                        _placeholder={{ color: "grayMain" }}
+                        border="none"
+                        pl={0.5}
+                        placeholder="399"
+                        width="100px"
+                      />
+                    </InputGroup>
+                  </Flex>
+                </Flex>
+
+                <RadioGroup display="flex" flexDirection="column">
+                  {filterOptions.map(({ value, name }) => (
+                    <Radio key={value} py={2} value={value}>
+                      {name}
+                    </Radio>
+                  ))}
+                </RadioGroup>
+              </Box>
+            </MenuList>
+          </Menu>
         </Flex>
         <Grid gap={5} templateColumns="repeat(4, 2fr)">
           <GridItem
             _hover={{
               width: "100%",
               height: "100%",
-              content: '""',
-              background: "rgba(0, 0, 0, 0.5)",
+              opacity: 0.1,
             }}
+            background={`url(${One})`}
+            backgroundSize="cover"
+            transition="0.2s all ease-out"
             onClick={onOpen}
-          >
-            <Image src={One} />
-          </GridItem>
+          />
           <GridItem onClick={onOpen}>
             <Image src={One} />
           </GridItem>

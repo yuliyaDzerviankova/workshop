@@ -17,12 +17,16 @@ const Footer = () => (
       <Heading color="accent" fontSize="22px" fontWeight={500} mb="10px" textTransform="uppercase">
         workshop nina
       </Heading>
-      <Text mb={2}>г. Гомель, ул. Советская 23</Text>
-      <Text mb={2}>+375(29)555-55-55</Text>
-      <Text>gospodipomogi@gmail.com</Text>
+      <Text mb={2}>г. Гомель, ул. Гагарина 55Б</Text>
+      <Text mb={2}>+375 (29) 260-88-66</Text>
+      <Text>workshop.nina@gmail.com</Text>
       <Flex align="center" mt={3}>
-        <InstagramIcon height="30px" mr={4} width="30px" />
-        <TelegramIcon height="30px" width="30px" />
+        <Link href="https://www.instagram.com/workshop.nina/" mr={3} w="30px">
+          <InstagramIcon height="30px" width="30px" />
+        </Link>
+        <Link href="#" w="30px">
+          <TelegramIcon height="30px" width="30px" />
+        </Link>
       </Flex>
     </Box>
     <Box>
@@ -93,8 +97,8 @@ const Footer = () => (
       <Text textAlign="center">Ежедневно с 11:00 до 19:00</Text>
       <Box mt={4}>
         <Text>
-          © Веб-приложение интернет-магазина workshop nina ООО «ыавыва» УНП 26576970 Адрес: 357970, Республика
-          Беларусь, Гомель, проспект ва9кшлвзпа, д. 2
+          © Веб-приложение интернет-магазина workshop nina ИП «Милентьева А.С.» Адрес: 246017, Республика Беларусь,
+          Гомель, ул. Гагарина 55Б
         </Text>
       </Box>
     </Box>

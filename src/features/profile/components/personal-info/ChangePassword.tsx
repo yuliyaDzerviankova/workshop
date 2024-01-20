@@ -25,7 +25,7 @@ const ChangePassword = () => {
   })
 
   const updatePassword = async (data: Values) => {
-    console.log(data)
+    await console.log(data)
   }
 
   return (

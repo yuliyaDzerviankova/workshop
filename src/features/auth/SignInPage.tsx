@@ -48,7 +48,10 @@ const SignInPage = () => {
                   </FormErrorMessage>
                 </FormControl>
               )}
-              rules={{ required: "Введите номер телефона" }}
+              rules={{
+                required: "Введите номер телефона",
+                pattern: { value: /^[+](375)[0-9]{9}$/, message: "Номер телефона невалидный" },
+              }}
             />
             <Controller
               control={control}

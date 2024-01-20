@@ -1,6 +1,9 @@
 import { DeleteIcon } from "@chakra-ui/icons"
 import {
   Box,
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
   Button,
   Checkbox,
   Flex,
@@ -8,7 +11,6 @@ import {
   GridItem,
   Heading,
   Image,
-  Link,
   Stack,
   Text,
   VStack,
@@ -51,15 +53,18 @@ const Cart = () => {
   return (
     <Box background="whiteMain" width="100%">
       <VStack alignItems="flex-start" px="100px" py="40px">
-        <Flex>
-          <Link textDecoration="underline" onClick={() => navigate("/main")}>
-            Главная
-          </Link>
-          <Text mx={1.5}>-</Text>
-          <Link textDecoration="underline" onClick={() => navigate("/catalog")}>
-            Каталог
-          </Link>
-        </Flex>
+        <Breadcrumb separator="-">
+          <BreadcrumbItem>
+            <BreadcrumbLink _hover={{ textDecoration: "none" }} color="link" href="/main" textDecoration="underline">
+              Главная
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbItem isCurrentPage>
+            <BreadcrumbLink color="link" href="/catalog">
+              Каталог
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+        </Breadcrumb>
         <Heading fontWeight={600}>Корзина</Heading>
         <Grid gap={6} templateColumns="repeat(6, 1fr)" width="100%">
           <GridItem colSpan={1} />
@@ -123,10 +128,10 @@ const Cart = () => {
               </Flex>
             </GridItem>
             <GridItem alignItems="center" display="flex">
-              <Text fontWeight={600}>{flower.price} р.</Text>
+              <Text fontWeight={600}>{flower.price * flower.count} р.</Text>
             </GridItem>
             <GridItem alignItems="center" display="flex" justifyContent="center">
-              <Checkbox />
+              <Checkbox size="lg" />
             </GridItem>
           </Grid>
         ))}
@@ -143,7 +148,7 @@ const Cart = () => {
               Вы не выбрали товар!
             </Text>
             <Flex justify="flex-end">
-              <Button background="grayMain" fontSize="sm">
+              <Button background="grayMain" fontSize="sm" onClick={() => navigate("/catalog")}>
                 Продолжить покупки
               </Button>
             </Flex>

@@ -1,5 +1,5 @@
-import { Button, Grid, GridItem } from "@chakra-ui/react"
-import { useForm } from "react-hook-form"
+import { Button, FormControl, FormErrorMessage, FormLabel, Grid, GridItem, Input } from "@chakra-ui/react"
+import { Controller, useForm } from "react-hook-form"
 
 import { Form, InputControl } from "../../../../components/form"
 
@@ -16,7 +16,7 @@ const Info = () => {
   const {
     control,
     handleSubmit,
-    formState: { isSubmitting },
+    formState: { isSubmitting, errors },
   } = useForm<Values>({
     defaultValues: {
       id: "",
@@ -29,7 +29,8 @@ const Info = () => {
   })
 
   const updatePersonalData = async (data: Values) => {
-    console.log(data)
+    console.log("sdjkfkl;jfdlkjl")
+    await console.log(data)
   }
 
   return (
