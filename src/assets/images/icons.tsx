@@ -410,3 +410,13 @@ export const TelegramIcon = createIcon({
   ),
   viewBox: "0 0 30 28",
 })
+
+export const CircleSolidIcon = createIcon({
+  displayName: "CircleSolidIcon",
+  path: (
+    <>
+      <circle cx="5" cy="5" fill="#DEEC00" r="5" />
+    </>
+  ),
+  viewBox: "0 0 10 10",
+})

@@ -97,7 +97,13 @@ const RegisterPage = () => {
             <Text color="grayMain" textAlign="center">
               или
             </Text>
-            <Link color="link" fontWeight="normal" textAlign="center" textDecoration="underline" variant="ghost">
+            <Link
+              color="link"
+              textAlign="center"
+              textDecoration="underline"
+              variant="ghost"
+              onClick={() => navigate("/signin")}
+            >
               Войти в аккаунт
             </Link>
           </Stack>

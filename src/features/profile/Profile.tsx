@@ -65,9 +65,9 @@ const Profile = () => {
             <TabPanel display="flex" flexWrap="wrap" p={0}>
               <Grid gap={5} templateColumns="repeat(3, 1fr)">
                 {profileTabs.map(({ Icon, title, onClick }) => (
-                  <Card key={title} Icon={Icon} title={title} onClick={onClick} />
+                  <Card key={`id-${title}`} Icon={Icon} title={title} onClick={onClick} />
                 ))}
-                <Card Icon={ExitIcon} title="Выход" onClick={() => navigate("/signin")} />
+                <Card key="sign-in" Icon={ExitIcon} title="Выход" onClick={() => navigate("/signin")} />
               </Grid>
             </TabPanel>
             <TabPanel flex={1}>

@@ -1,4 +1,5 @@
 import { Box, Button, Flex, FormControl, FormErrorMessage, FormLabel, Input, Link, Stack, Text } from "@chakra-ui/react"
+import { useState } from "react"
 import { Controller, useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
 
@@ -16,11 +17,20 @@ const SignInPage = () => {
     handleSubmit,
     formState: { isSubmitting, errors },
   } = useForm<Values>({ defaultValues: { phoneNumber: "", password: "" } })
+  const validCreds = [
+    { phone: "+375447484105", password: "erd_34FS" },
+    { phone: "+375447282024", password: "fFse-sc3WQ" },
+  ]
+  const [isError, setIsError] = useState(false)
 
   const onSignin = async (data: Values) => {
-    console.log(data)
-
-    return navigate("/")
+    const user = validCreds.find((item) => item.phone === data.phoneNumber && item.password === data.password)
+    if (user) {
+      return navigate("/")
+    } else {
+      setIsError(true)
+      setTimeout(() => setIsError(false), 2000)
+    }
   }
 
   return (
@@ -36,6 +46,11 @@ const SignInPage = () => {
             С возвращением!
           </Text>
           <Stack as={Form} pt="30px" onSubmit={handleSubmit(onSignin)}>
+            {isError && (
+              <Text color="error" fontSize="sm" textAlign="center">
+                Данные не совпадают
+              </Text>
+            )}
             <Controller
               control={control}
               name="phoneNumber"
@@ -62,7 +77,7 @@ const SignInPage = () => {
                     <Text>Пароль</Text>
                     <Link textDecoration="underline">Забыли?</Link>
                   </FormLabel>
-                  <Input placeholder="Введите пароль" {...field} value={value} />
+                  <Input placeholder="Введите пароль" type="password" {...field} value={value} />
                   <FormErrorMessage mt={2} position="relative" variant="tooltip" zIndex={1}>
                     {errors.password?.message}
                   </FormErrorMessage>
