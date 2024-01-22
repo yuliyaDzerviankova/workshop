@@ -33,7 +33,7 @@ const Profile = () => {
         <Flex align="center" mb={4}>
           <Text>Здравствуйте, </Text>
           <Text fontWeight={600} ml={2}>
-            покупатель!
+            Анастасия!
           </Text>
         </Flex>
 
@@ -86,7 +86,7 @@ const Profile = () => {
         </Tabs>
       </Stack>
 
-      <AccountDeletingModal isOpen={isOpen} onClose={onClose} />
+      <AccountDeletingModal isOpen={isOpen} onClose={onClose} onClick={() => navigate("/signin")} />
     </Stack>
   )
 }

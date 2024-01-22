@@ -72,17 +72,17 @@ const OrderDetailModal = ({ order, onClose, isOpen }: Props) => (
             </Text>
             <Text flex={2}>{order.deliveryType}</Text>
           </Flex>
-          <Flex width="100%">
-            <Text color="error" flex={1.5}>
-              Трек-номер отслеживания
-            </Text>
-            <Text flex={2} fontWeight={600}>
-              {order.trackNumber}
-            </Text>
-          </Flex>
+          {/*<Flex width="100%">*/}
+          {/*  <Text color="error" flex={1.5}>*/}
+          {/*    Трек-номер отслеживания*/}
+          {/*  </Text>*/}
+          {/*  <Text flex={2} fontWeight={600}>*/}
+          {/*    {order.trackNumber}*/}
+          {/*  </Text>*/}
+          {/*</Flex>*/}
           <Flex width="100%">
             <Text color="link" flex={1.5}>
-              Адрес места для самовывоза
+              Адрес доставки
             </Text>
             <Text flex={2}>{order.ownAddress}</Text>
           </Flex>

@@ -13,9 +13,10 @@ import {
 type Props = {
   isOpen: boolean
   onClose: () => void
+  onClick: () => void
 }
 
-const AccountDeletingModal = ({ isOpen, onClose }: Props) => (
+const AccountDeletingModal = ({ isOpen, onClose, onClick }: Props) => (
   <Modal isOpen={isOpen} size="md" isCentered onClose={onClose}>
     <ModalOverlay />
     <ModalContent p="40px">
@@ -33,7 +34,7 @@ const AccountDeletingModal = ({ isOpen, onClose }: Props) => (
         <Button background="grayMain" color="whiteMain" w="150px" onClick={onClose}>
           Назад
         </Button>
-        <Button w="150px">Удалить</Button>
+        <Button w="150px" onClick={onClick}>Удалить</Button>
       </ModalFooter>
     </ModalContent>
   </Modal>

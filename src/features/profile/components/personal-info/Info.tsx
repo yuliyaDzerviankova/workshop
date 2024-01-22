@@ -16,15 +16,15 @@ const Info = () => {
   const {
     control,
     handleSubmit,
-    formState: { isSubmitting, errors },
+    formState: { isSubmitting },
   } = useForm<Values>({
     defaultValues: {
       id: "",
-      name: "",
-      firstName: "",
-      middleName: "",
-      phoneNumber: "",
-      email: "",
+      firstName: "Денисова",
+      name: "Анастасия",
+      middleName: "Валерьевна",
+      phoneNumber: "+375447282024",
+      email: "anastasiaden@gmail.com",
     },
   })
 
