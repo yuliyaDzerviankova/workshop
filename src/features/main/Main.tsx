@@ -24,7 +24,7 @@ const Main = () => (
       </Flex>
     </Flex>
 
-    <VStack fontSize="4xl" gap={0} px={6} w="100%">
+    <VStack fontSize="4xl" gap={0} w="100%">
       <Flex w="100%">
         <Box flex={1} pos="relative">
           <ChevronLeftIcon
@@ -61,13 +61,53 @@ const Main = () => (
             Уход за телом
           </Text>
         </Flex>
-        <Box flex={1}>
+        <Box flex={1} pos="relative">
+          <ChevronLeftIcon
+            _hover={{
+              transform: "scale(1.2)",
+              cursor: "pointer",
+            }}
+            color="whiteMain"
+            left={0}
+            pos="absolute"
+            top="45%"
+          />
           <Image src={BodycareIcon} width="100%" />
+          <ChevronRightIcon
+            _hover={{
+              transform: "scale(1.2)",
+              cursor: "pointer",
+            }}
+            color="whiteMain"
+            pos="absolute"
+            right={0}
+            top="45%"
+          />
         </Box>
       </Flex>
       <Flex flex={1} w="100%">
-        <Box flex={1}>
+        <Box flex={1} pos="relative">
+          <ChevronLeftIcon
+            _hover={{
+              transform: "scale(1.2)",
+              cursor: "pointer",
+            }}
+            color="whiteMain"
+            left={0}
+            pos="absolute"
+            top="45%"
+          />
           <Image src={CandleIcon} width="100%" />
+          <ChevronRightIcon
+            _hover={{
+              transform: "scale(1.2)",
+              cursor: "pointer",
+            }}
+            color="whiteMain"
+            pos="absolute"
+            right={0}
+            top="45%"
+          />
         </Box>
         <Flex align="center" bgColor="grayMain" flex={1} justify="center">
           <Text color="white" fontWeight={500} textAlign="center">
@@ -81,13 +121,53 @@ const Main = () => (
             Для дома и красоты
           </Text>
         </Flex>
-        <Box flex={1}>
+        <Box flex={1} pos="relative">
+          <ChevronLeftIcon
+            _hover={{
+              transform: "scale(1.2)",
+              cursor: "pointer",
+            }}
+            color="whiteMain"
+            left={0}
+            pos="absolute"
+            top="45%"
+          />
           <Image src={HomeIcon} width="100%" />
+          <ChevronRightIcon
+            _hover={{
+              transform: "scale(1.2)",
+              cursor: "pointer",
+            }}
+            color="whiteMain"
+            pos="absolute"
+            right={0}
+            top="45%"
+          />
         </Box>
       </Flex>
       <Flex flex={1} w="100%">
-        <Box flex={1}>
+        <Box flex={1} pos="relative">
+          <ChevronLeftIcon
+            _hover={{
+              transform: "scale(1.2)",
+              cursor: "pointer",
+            }}
+            color="whiteMain"
+            left={0}
+            pos="absolute"
+            top="45%"
+          />
           <Image src={BoxesIcon} width="100%" />
+          <ChevronRightIcon
+            _hover={{
+              transform: "scale(1.2)",
+              cursor: "pointer",
+            }}
+            color="whiteMain"
+            pos="absolute"
+            right={0}
+            top="45%"
+          />
         </Box>
         <Flex align="center" bgColor="grayMain" flex={1} justify="center">
           <Text color="white" fontWeight={500} textAlign="center">
