@@ -141,8 +141,8 @@ const Delivery = () => (
           <FormControl display="flex" flexDirection="column">
             <FormLabel>Срок действия</FormLabel>
             <Flex justifyContent="space-between" width="100%">
-              <Input defaultValue="12" mr={5} placeholder="ММ" />
-              <Input defaultValue="25" placeholder="ГГ" />
+              <Input defaultValue="12" id="month" mr={5} name="month" placeholder="ММ" />
+              <Input defaultValue="25" id="year" name="year" placeholder="ГГ" />
             </Flex>
           </FormControl>
         </GridItem>

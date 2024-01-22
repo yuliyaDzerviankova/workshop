@@ -1,6 +1,9 @@
 import { ArrowForwardIcon, CloseIcon } from "@chakra-ui/icons"
 import {
   Box,
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
   Button,
   Flex,
   FormControl,
@@ -22,30 +25,29 @@ import {
   VStack,
   useDisclosure,
 } from "@chakra-ui/react"
-import { ChangeEvent, ReactElement, useEffect, useState } from "react"
+import { ChangeEvent, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-import { One, SuccessIcon, Three } from "assets"
+import { flowers } from "../../mocks"
+import { Flower } from "../../models"
+import { SuccessIcon } from "assets"
 
 type OrderDetails = {
   id: string
-  image: ReactElement
-  name: string
-  price: number
+  flower: Flower
+  count: number
 }
 
 const orderDetails: OrderDetails[] = [
   {
     id: "1",
-    image: <Image maxH="150px" src={One} />,
-    name: "Букет сборный",
-    price: 120,
+    flower: flowers[0],
+    count: 1,
   },
   {
     id: "2",
-    image: <Image maxH="150px" src={Three} />,
-    name: "Букет сборный",
-    price: 270,
+    flower: flowers[2],
+    count: 1,
   },
 ]
 
@@ -75,7 +77,7 @@ const Order = () => {
   })
 
   useEffect(() => {
-    const prices = orderDetails.map((item) => item.price)
+    const prices = orderDetails.map(({ flower }) => flower.price)
     const sum = prices.reduce((a, b) => a + b)
     setSum(sum)
   }, [])
@@ -151,13 +153,23 @@ const Order = () => {
   return (
     <VStack alignItems="flex-start" background="whiteMain" justifyItems="flex-start" width="100%">
       <VStack alignItems="flex-start" px="100px" py="40px" width="100%">
-        <Flex>
-          <Link>Главная</Link>
-          <Text mx={2}>-</Text>
-          <Link>Каталог</Link>
-          <Text mx={2}>-</Text>
-          <Link>Корзина</Link>
-        </Flex>
+        <Breadcrumb separator="-">
+          <BreadcrumbItem>
+            <BreadcrumbLink _hover={{ textDecoration: "none" }} color="link" href="/main" textDecoration="underline">
+              Главная
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbItem>
+            <BreadcrumbLink _hover={{ textDecoration: "none" }} color="link" href="/catalog" textDecoration="underline">
+              Каталог
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbItem isCurrentPage>
+            <BreadcrumbLink color="link" href="/order">
+              Корзина
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+        </Breadcrumb>
         <Heading fontWeight={600}>Оформление заказа</Heading>
         <Flex mt="30px" width="100%">
           <VStack alignItems="flex-start" background="grayOpacity" flex={1} gap={4} p="15px" width="100%">
@@ -394,9 +406,9 @@ const Order = () => {
           </VStack>
 
           <VStack flex={1} ml="35px">
-            {orderDetails.map((item) => (
+            {orderDetails.map(({ flower, id, count }) => (
               <HStack
-                key={item.id}
+                key={id}
                 _notFirst={{ mt: 4 }}
                 borderBottomColor="#C6C5C5"
                 borderBottomWidth={1}
@@ -405,15 +417,15 @@ const Order = () => {
                 width="100%"
               >
                 <CloseIcon position="absolute" right={0} top={0} />
-                {item.image}
+                <Image maxW="200px" src={flower.icon} />
                 <Flex justify="space-between" ml={5} width="100%">
-                  <Text fontWeight={500}>{item.name}</Text>
-                  <Text fontWeight={600}>{item.price} р.</Text>
+                  <Text fontWeight={500}>{flower.name}</Text>
+                  <Text fontWeight={600}>{flower.price * count} р.</Text>
                 </Flex>
               </HStack>
             ))}
 
-            <Flex align="center" justify="space-between" mt="30px" width="100%">
+            <Flex align="center" justify="space-between" mt={4} width="100%">
               <Text>Сумма:</Text>
               <Text fontWeight={600}>{sum} р.</Text>
             </Flex>
@@ -424,7 +436,7 @@ const Order = () => {
           </VStack>
         </Flex>
 
-        <VStack align="flex-end" flex={1} width="100%">
+        <VStack align="flex-end" flex={1} mt={6} width="100%">
           <Box alignItems="flex-end" display="flex" flexDirection="column" w="30%">
             <Flex align="center" justify="space-between" width="100%">
               <Text>Итого:</Text>

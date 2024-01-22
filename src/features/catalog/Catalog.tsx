@@ -50,20 +50,14 @@ const Catalog = () => {
           <Filter />
         </Flex>
         <Grid gap={5} templateColumns="repeat(4, 2fr)">
-          <GridItem
-            _hover={{
-              width: "100%",
-              height: "100%",
-              opacity: 0.1,
-            }}
-            background={`url(${One})`}
-            backgroundSize="cover"
-            transition="0.2s all ease-out"
-            onClick={onOpen}
-          />
           {flowers.map((item) => (
             <GridItem
               key={item.id}
+              _hover={{
+                cursor: "pointer",
+                transform: "scale(1.05)",
+                transition: "0.2s all ease-out",
+              }}
               onClick={() => {
                 setFlower(item)
                 onOpen()

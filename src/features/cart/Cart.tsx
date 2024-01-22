@@ -15,9 +15,10 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react"
-import { ReactElement } from "react"
+import { ReactElement, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
+import { flowers } from "../../mocks"
 import { One, Three } from "assets"
 
 type Flower = {
@@ -29,26 +30,28 @@ type Flower = {
   price: number
 }
 
+const prepareOrder = [
+  {
+    id: "1",
+    flower: flowers[0],
+    count: 1,
+  },
+  {
+    id: "2",
+    flower: flowers[2],
+    count: 1,
+  },
+]
+
 const Cart = () => {
   const navigate = useNavigate()
-  const flowers: Flower[] = [
-    {
-      id: "1",
-      image: <Image maxW="200px" src={One} />,
-      name: "Букет сборный",
-      description: "гергины, колокольчики, скабиоза, кампанула, патирус.",
-      count: 1,
-      price: 120,
-    },
-    {
-      id: "2",
-      image: <Image maxW="200px" src={Three} />,
-      name: "Букет сборный",
-      description: "антуриум, альстромерии, георгины, диантусы.",
-      count: 2,
-      price: 270,
-    },
-  ]
+  const [sum, setSum] = useState(0)
+
+  useEffect(() => {
+    const sumEach = prepareOrder.map(({ count, flower }) => flower.price * count)
+    const sumTotal = sumEach.reduce((a, b) => a + b)
+    setSum(sumTotal)
+  }, [])
 
   return (
     <Box background="whiteMain" width="100%">
@@ -83,16 +86,18 @@ const Cart = () => {
             </Button>
           </GridItem>
         </Grid>
-        {flowers.map((flower) => (
+        {prepareOrder.map(({ id, flower, count }) => (
           <Grid
-            key={flower.id}
+            key={id}
             _notLast={{ borderBottomWidth: 1, borderBottomColor: "grayMain" }}
             gap={6}
             py={4}
             templateColumns="repeat(6, 1fr)"
             width="100%"
           >
-            <GridItem colSpan={1}>{flower.image}</GridItem>
+            <GridItem colSpan={1}>
+              <Image src={flower.icon} />
+            </GridItem>
             <GridItem
               alignItems="flex-start"
               colSpan={2}
@@ -121,14 +126,14 @@ const Cart = () => {
                 <Button background="grayMain" borderRadius={0} fontSize="24px">
                   -
                 </Button>
-                <Text mx={3}>{flower.count}</Text>
+                <Text mx={3}>{count}</Text>
                 <Button background="grayMain" borderRadius={0} fontSize="24px">
                   +
                 </Button>
               </Flex>
             </GridItem>
             <GridItem alignItems="center" display="flex">
-              <Text fontWeight={600}>{flower.price * flower.count} р.</Text>
+              <Text fontWeight={600}>{flower.price * count} р.</Text>
             </GridItem>
             <GridItem alignItems="center" display="flex" justifyContent="center">
               <Checkbox size="lg" />
@@ -139,7 +144,7 @@ const Cart = () => {
           <Stack gap={3} width="20%">
             <Flex align="center" justify="space-between">
               <Text>Итого:</Text>
-              <Text fontWeight={600}>0 р.</Text>
+              <Text fontWeight={600}>{sum} р.</Text>
             </Flex>
             <Button width="100%" onClick={() => navigate("/order")}>
               Перейти к оформлению

@@ -14,7 +14,7 @@ import {
   Tr,
   useDisclosure,
 } from "@chakra-ui/react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 import { OrderDetailModal } from "./OrderDetailModal"
 import { ordersHistory } from "../../../mocks"
@@ -22,6 +22,7 @@ import { Order } from "../../../models"
 
 const OrdersHistory = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const [total, setTotal] = useState(0)
   const [order, setOrder] = useState<Order>({
     orderId: "",
     orderDate: "",
@@ -36,6 +37,12 @@ const OrdersHistory = () => {
     ownAddress: "",
     recipient: "",
   })
+
+  useEffect(() => {
+    const prices = ordersHistory.map((item) => item.price)
+    const sum = prices.reduce((a, b) => a + b)
+    setTotal(sum)
+  }, [])
 
   return (
     <Stack>
@@ -78,7 +85,7 @@ const OrdersHistory = () => {
           <Flex alignItems="center" display="flex" justifyContent="flex-end" mt={5} width="100%">
             <Text>Сумма выполненных заказов:</Text>
             <Text fontWeight={600} ml={5} pr={6}>
-              146 руб.
+              {total} руб.
             </Text>
           </Flex>
         </TableContainer>

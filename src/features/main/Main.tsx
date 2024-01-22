@@ -24,8 +24,8 @@ const Main = () => (
       </Flex>
     </Flex>
 
-    <VStack fontSize="4xl" gap={0} w="100%">
-      <Flex flex={1} w="100%">
+    <VStack fontSize="4xl" gap={0} px={6} w="100%">
+      <Flex w="100%">
         <Box flex={1} pos="relative">
           <ChevronLeftIcon
             _hover={{
@@ -37,7 +37,7 @@ const Main = () => (
             pos="absolute"
             top="45%"
           />
-          <Image src={FlowersIcon} />
+          <Image src={FlowersIcon} width="100%" />
           <ChevronRightIcon
             _hover={{
               transform: "scale(1.2)",
@@ -62,12 +62,12 @@ const Main = () => (
           </Text>
         </Flex>
         <Box flex={1}>
-          <Image src={BodycareIcon} />
+          <Image src={BodycareIcon} width="100%" />
         </Box>
       </Flex>
       <Flex flex={1} w="100%">
         <Box flex={1}>
-          <Image src={CandleIcon} />
+          <Image src={CandleIcon} width="100%" />
         </Box>
         <Flex align="center" bgColor="grayMain" flex={1} justify="center">
           <Text color="white" fontWeight={500} textAlign="center">
@@ -82,12 +82,12 @@ const Main = () => (
           </Text>
         </Flex>
         <Box flex={1}>
-          <Image src={HomeIcon} />
+          <Image src={HomeIcon} width="100%" />
         </Box>
       </Flex>
       <Flex flex={1} w="100%">
         <Box flex={1}>
-          <Image src={BoxesIcon} />
+          <Image src={BoxesIcon} width="100%" />
         </Box>
         <Flex align="center" bgColor="grayMain" flex={1} justify="center">
           <Text color="white" fontWeight={500} textAlign="center">
