@@ -149,9 +149,9 @@ const Cart = () => {
             <Button width="100%" onClick={() => navigate("/order")}>
               Перейти к оформлению
             </Button>
-            <Text color="#EA777D" fontSize="sm" textAlign="center">
-              Вы не выбрали товар!
-            </Text>
+            {/*<Text color="#EA777D" fontSize="sm" textAlign="center">*/}
+            {/*  Вы не выбрали товар!*/}
+            {/*</Text>*/}
             <Flex justify="flex-end">
               <Button background="grayMain" fontSize="sm" onClick={() => navigate("/catalog")}>
                 Продолжить покупки
