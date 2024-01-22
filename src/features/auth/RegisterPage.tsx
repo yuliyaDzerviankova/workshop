@@ -50,6 +50,7 @@ const RegisterPage = () => {
               control={control}
               label="Пароль"
               name="password"
+              type="password"
               placeholder="Ireumeun_JK"
               rules={{
                 required: "Введите пароль",
@@ -66,6 +67,7 @@ const RegisterPage = () => {
               control={control}
               label="Повторите пароль"
               name="repeatPassword"
+              type="password"
               placeholder="Ireumeun_JK"
               rules={{
                 required: "Повторите пароль",

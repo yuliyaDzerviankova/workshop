@@ -19,7 +19,7 @@ const SignInPage = () => {
   } = useForm<Values>({ defaultValues: { phoneNumber: "", password: "" } })
   const validCreds = [
     { phone: "+375447484105", password: "erd_34FS" },
-    { phone: "+375447282024", password: "fFse-sc3WQ" },
+    { phone: "+375447282024", password: "Test_123" },
   ]
   const [isError, setIsError] = useState(false)
 
